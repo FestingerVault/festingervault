@@ -22,7 +22,7 @@ class Constants {
         ],
     ];
 
-    const ENGINE_URL = "https://engine.sovit.top";
+    const ENGINE_URL = "https://engine.festingervault.com";
 
     const PLUGIN_DOWNLOAD_URL = "https://raw.githubusercontent.com/FestingerVault/festingervault/beta-release/festingervault.zip";
 
