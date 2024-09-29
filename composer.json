@@ -1,0 +1,20 @@
+{
+    "name": "sovit/festingervault",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "config": {
+        "vendor-dir": "includes/lib"
+    },
+    "autoload": {
+        "psr-4": {
+            "FestingerVault\\": "includes/src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sovit Tamrakar",
+            "email": "sovit.tamrakar@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

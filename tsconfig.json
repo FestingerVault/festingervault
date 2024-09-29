@@ -1,0 +1,18 @@
+{
+	"exclude": ["node_modules"],
+	"include": ["src/**/*"],
+	"compilerOptions": {
+		"moduleResolution": "Node10",
+		"allowJs": true,
+		"jsx": "react-jsx",
+		"target": "ESNext",
+		"lib": ["ES2015", "DOM"],
+		"module": "ESNext",
+		"types": ["vite/client"],
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}
