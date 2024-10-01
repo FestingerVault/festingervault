@@ -2,7 +2,6 @@
 /includes/lib
 /.fleet
 /.idea
-/.vscode
 /storage/logs/*.log
 /app/.DS_Store
 /composer.lock
