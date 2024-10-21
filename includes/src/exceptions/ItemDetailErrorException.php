@@ -1,7 +1,6 @@
 <?php
 namespace FestingerVault\exceptions;
-use Exception;
-class ItemDetailErrorException extends Exception
+class ItemDetailErrorException extends \Exception
 {
 	private $item_id;
 	function __construct($item_id)

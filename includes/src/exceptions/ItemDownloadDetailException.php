@@ -1,7 +1,6 @@
 <?php
 namespace FestingerVault\exceptions;
-use Exception;
-class ItemDownloadDetailException extends Exception
+class ItemDownloadDetailException extends \Exception
 {
 	private $item_id;
 	function __construct($item_id)

@@ -44,7 +44,7 @@ export default function WPEnvProcess({
 		return content.replace(
 			/namespace\s+(.+)?;/gi,
 			'namespace ' + chunks.join('\\') + ';'
-		);
+		).replace(/^use\s+([0-9a-zA-Z_]+)/gm, 'use '+env.NAMESPACE);
 	};
 	const replaceTextdomain = (content: string, textdomain: string) => {
 		const pattern =

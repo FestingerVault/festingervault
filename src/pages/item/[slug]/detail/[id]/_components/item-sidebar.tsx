@@ -8,6 +8,7 @@ import ChangelogPreview from './changelog-preview';
 import ItemDetail from './item-detail';
 import ItemTerms from './item-terms';
 import VirusTotalScan from './item-virus-total';
+import ItemDisclaimer from './item-disclaimer';
 
 type Props = {
 	item: TPostItem;
@@ -47,6 +48,7 @@ export default function ItemSidebar({ item }: Props) {
 				</CardContent>
 			</Card>
 			<VirusTotalScan item={item} />
+			<ItemDisclaimer />
 			<ItemDetail item={item} />
 			{item.media_count &&
 				item.media_count > 0 &&

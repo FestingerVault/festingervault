@@ -32,17 +32,25 @@ function ItemChangelogTable({ item, data }: ItemChangelogTableProps) {
 				className: 'w-full',
 				render({ row }) {
 					return (
-						<div className="flex flex-row items-center gap-2">
-							<span className="text-xl">{row.version}</span>
-							{installed &&
-								installed.installed_version === row.version && (
-									<Badge
-										variant="info"
-										size="sm"
-									>
-										{__('Installed')}
-									</Badge>
+						<div className="flex flex-col gap-2">
+							<div className="flex flex-row items-center gap-2">
+								<span className="text-xl">{row.version}</span>
+								{installed &&
+									installed.installed_version ===
+										row.version && (
+										<Badge
+											variant="info"
+											size="sm"
+										>
+											{__('Installed')}
+										</Badge>
+									)}
+							</div>
+							<span className="text-xs">
+								{__(
+									'Compatible with latest version of WordPress'
 								)}
+							</span>
 						</div>
 					);
 				}

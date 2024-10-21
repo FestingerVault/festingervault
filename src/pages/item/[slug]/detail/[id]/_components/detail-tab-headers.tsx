@@ -34,7 +34,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span>{__('Live Preview')}</span>
+								<span>{__('Original Author')}</span>
 								<ExternalLink size={16} />
 							</a>
 						</Button>

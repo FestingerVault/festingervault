@@ -1,8 +1,5 @@
 <?php
-
 namespace FestingerVault;
-
-use stdClass;
 
 class Upgrade
 {
@@ -60,7 +57,7 @@ class Upgrade
 	 * @param $response
 	 * @param $action
 	 * @param $args
-	 * @return boolean|stdClass
+	 * @return boolean|\stdClass
 	 */
 	function info($response, $action, $args)
 	{
@@ -80,13 +77,13 @@ class Upgrade
 	}
 
 	/**
-	 * @return boolean|stdClass
+	 * @return boolean|\stdClass
 	 */
 
 	public function request()
 	{
 		/**
-		 * @var boolean|stdClass
+		 * @var boolean|\stdClass
 		 */
 		$response = get_transient($this->cache_key);
 
@@ -110,7 +107,7 @@ class Upgrade
 				return false;
 			}
 			$remote = json_decode(wp_remote_retrieve_body($remote), false);
-			$response = new stdClass();
+			$response = new \stdClass();
 
 			$response->name = $remote->name;
 			$response->slug = $remote->slug;
@@ -148,8 +145,8 @@ class Upgrade
 	}
 
 	/**
-	 * @param stdClass $transient
-	 * @return stdClass
+	 * @param \stdClass $transient
+	 * @return \stdClass
 	 */
 	public function update($transient)
 	{

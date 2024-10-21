@@ -2,26 +2,26 @@
 
 namespace FestingerVault\api;
 
-use WP_Error;
-use WP_REST_Request;
-
-use FestingerVault\{Helper, Installer};
+use FestingerVault\{
+	Helper,
+	Installer
+};
 
 class Item extends ApiBase
 {
-	public function categories(WP_REST_Request $request)
+	public function categories(\WP_REST_Request $request)
 	{
 		$type = $request->get_param('type');
 		return Helper::engine_post('item/categories', [
 			'type' => $type,
 		]);
 	}
-	public function terms(WP_REST_Request $request)
+	public function terms(\WP_REST_Request $request)
 	{
 		return Helper::engine_post('item/terms');
 	}
 
-	public function changelog(WP_REST_Request $request)
+	public function changelog(\WP_REST_Request $request)
 	{
 		$page = $request->get_param('page');
 		$item_id = $request->get_param('item_id');
@@ -31,7 +31,7 @@ class Item extends ApiBase
 		]);
 	}
 
-	public function demo_content(WP_REST_Request $request)
+	public function demo_content(\WP_REST_Request $request)
 	{
 		$page = $request->get_param('page');
 		$item_id = $request->get_param('item_id');
@@ -41,7 +41,7 @@ class Item extends ApiBase
 		]);
 	}
 
-	public function detail(WP_REST_Request $request)
+	public function detail(\WP_REST_Request $request)
 	{
 		$item_id = $request->get_param('item_id');
 
@@ -49,7 +49,7 @@ class Item extends ApiBase
 			'item_id' => $item_id,
 		]);
 	}
-	public function download_additional(WP_REST_Request $request)
+	public function download_additional(\WP_REST_Request $request)
 	{
 		$item_id = $request->get_param('item_id');
 		$media_id = $request->get_param('media_id');
@@ -57,7 +57,7 @@ class Item extends ApiBase
 			'item_id' => $item_id,
 		]);
 		if (is_wp_error($item_detail)) {
-			return new WP_Error(
+			return new \WP_Error(
 				400,
 				__('Error getting Item detail', 'festingervault')
 			);
@@ -101,7 +101,7 @@ class Item extends ApiBase
 		];
 	}
 
-	public function install(WP_REST_Request $request)
+	public function install(\WP_REST_Request $request)
 	{
 		$item_id = $request->get_param('item_id');
 		$method = $request->get_param('method');
@@ -129,7 +129,7 @@ class Item extends ApiBase
 		$installer = new Installer($item_detail, $download_detail);
 		$status = $installer->run();
 		if (is_wp_error($status)) {
-			return new WP_Error(
+			return new \WP_Error(
 				400,
 				__('Error running item installation/update', 'festingervault')
 			);
@@ -137,7 +137,7 @@ class Item extends ApiBase
 		return ['success' => true];
 	}
 
-	public function items(WP_REST_Request $request)
+	public function items(\WP_REST_Request $request)
 	{
 		$type = $request->get_param('type');
 		$page = $request->get_param('page');
@@ -155,7 +155,7 @@ class Item extends ApiBase
 		]);
 	}
 
-	public function stats(WP_REST_Request $request)
+	public function stats(\WP_REST_Request $request)
 	{
 		return Helper::engine_post('item/stats');
 	}
