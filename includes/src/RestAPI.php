@@ -6,6 +6,7 @@ use FestingerVault\api\{
 	Announcement,
 	ApiBase,
 	Collection,
+	Disclaimer,
 	History,
 	Item,
 	License,
@@ -31,6 +32,7 @@ class RestAPI
 		$this->register(new History());
 		$this->register(new Collection());
 		$this->register(new Popular());
+		$this->register(new Disclaimer());
 	}
 
 	public static function get_instance()

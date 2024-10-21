@@ -3,7 +3,6 @@
 namespace FestingerVault\api;
 
 use FestingerVault\Constants;
-use WP_Roles;
 
 class Setting extends ApiBase
 {
@@ -80,7 +79,7 @@ class Setting extends ApiBase
 
 		// Check if wp_roles is set
 		if (!isset($wp_roles)) {
-			$wp_roles = new WP_Roles();
+			$wp_roles = new \WP_Roles();
 		}
 
 		// Get the roles as an array

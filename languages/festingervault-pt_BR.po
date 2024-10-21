@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: festinger-vault\n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
-"PO-Revision-Date: 2024-09-24 12:13\n"
+"PO-Revision-Date: 2024-10-21 15:44\n"
 
 #: src/components/add-collection-dialog.tsx:104
 msgid "List Description"
@@ -616,7 +616,7 @@ msgid "Installed Assets"
 msgstr "Recursos Instalados"
 
 #: src/pages/_components/install-stats.tsx:56
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:43
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:45
 msgid "Installed"
 msgstr "Instalado"
 
@@ -790,7 +790,7 @@ msgstr "Tipo"
 
 #: src/pages/history/_components/history-items.tsx:57
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:37
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:52
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:60
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:44
 msgid "Date"
 msgstr "Data"
@@ -825,7 +825,7 @@ msgid "Widget Ready"
 msgstr "Pronto para o widget"
 
 #: src/pages/item/[slug]/-[page]/index.tsx:127
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:65
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:67
 msgid "Compatible With"
 msgstr "Compatível com"
 
@@ -834,7 +834,7 @@ msgid "Files Included"
 msgstr "Arquivos Incluídos"
 
 #: src/pages/item/[slug]/-[page]/index.tsx:154
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:77
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:79
 msgid "Software Versions"
 msgstr "Versões do Software"
 
@@ -887,7 +887,7 @@ msgstr "Descrição"
 
 #: src/pages/item/[slug]/detail/[id]/-[tab].tsx:49
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:65
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:95
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:103
 msgid "Changelog"
 msgstr "Registro de Alterações"
 
@@ -906,14 +906,14 @@ msgstr "Detalhes do Item"
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:76
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:40
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:115
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:123
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:110
 msgid "Loading..."
 msgstr "Carregando..."
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:78
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:42
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:117
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:125
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:112
 msgid "No Items Found"
 msgstr "Nenhum Item Encontarado"
@@ -941,8 +941,12 @@ msgid "Invalid Tab?"
 msgstr "Registro Inválido?"
 
 #: src/pages/item/[slug]/detail/[id]/_components/detail-tab-headers.tsx:37
-msgid "Live Preview"
-msgstr "Visualização ao vivo"
+msgid "Original Author"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:50
+msgid "Compatible with latest version of WordPress"
+msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:28
 msgid "Name"
@@ -976,23 +980,27 @@ msgstr "Alta Resolução"
 msgid "Details"
 msgstr "Detalhes"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:31
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:13
+msgid "Legal Disclaimer"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:32
 msgid "Downloads"
 msgstr "Transferências"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:44
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:45
 msgid "Installs"
 msgstr "Instalações"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:55
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:57
 msgid "Tags"
 msgstr "Etiquetas"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:59
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:61
 msgid "Browsers"
 msgstr "Navegadores"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:71
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:73
 msgid "Included Files"
 msgstr "Arquivos Incluídos"
 

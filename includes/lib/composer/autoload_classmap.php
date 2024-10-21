@@ -20,6 +20,7 @@ return array(
     'FestingerVault\\api\\Announcement' => $baseDir . '/includes/src/api/Announcement.php',
     'FestingerVault\\api\\ApiBase' => $baseDir . '/includes/src/api/ApiBase.php',
     'FestingerVault\\api\\Collection' => $baseDir . '/includes/src/api/Collection.php',
+    'FestingerVault\\api\\Disclaimer' => $baseDir . '/includes/src/api/Disclaimer.php',
     'FestingerVault\\api\\History' => $baseDir . '/includes/src/api/History.php',
     'FestingerVault\\api\\Item' => $baseDir . '/includes/src/api/Item.php',
     'FestingerVault\\api\\License' => $baseDir . '/includes/src/api/License.php',

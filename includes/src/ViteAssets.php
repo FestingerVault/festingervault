@@ -1,8 +1,6 @@
 <?php
 namespace FestingerVault;
 
-use Exception;
-
 class ViteAssets
 {
 	const DEV_CLIENT_HANDLE = 'vite-wp-react-assets-dev-client';
@@ -378,7 +376,7 @@ class ViteAssets
 		try {
 			$this->init_manifest();
 			$this->init_dependencies();
-		} catch (Exception $e) {
+		} catch (\Exception $e) {
 			$this->die_if_debug(esc_html($e->getMessage()));
 		}
 	}
@@ -394,7 +392,7 @@ class ViteAssets
 	 * Initialize manifest
 	 *
 	 * @return void
-	 * @throws Exception Exception is thrown when the file doesn't exist or is unreadble.
+	 * @throws \Exception Exception is thrown when the file doesn't exist or is unreadble.
 	 */
 	protected function init_manifest(): void
 	{
@@ -409,7 +407,7 @@ class ViteAssets
 		}
 
 		if (!$this->dev_manifest && !$this->prod_manifest) {
-			throw new Exception(
+			throw new \Exception(
 				esc_html(
 					sprintf(
 						'[ViteWPReactAssets] Manifest file not found or is not readable in %s.',

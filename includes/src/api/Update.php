@@ -2,14 +2,14 @@
 
 namespace FestingerVault\api;
 
-use WP_Error;
-use WP_REST_Request;
-
-use FestingerVault\{Constants, Helper};
+use FestingerVault\{
+	Constants,
+	Helper
+};
 
 class Update extends ApiBase
 {
-	public function list(WP_REST_Request $request)
+	public function list(\WP_REST_Request $request)
 	{
 		return Helper::get_item_updates();
 	}
@@ -31,7 +31,7 @@ class Update extends ApiBase
 			],
 		];
 	}
-	public function get_setting(WP_REST_Request $request)
+	public function get_setting(\WP_REST_Request $request)
 	{
 		$settings = get_option(Constants::AUTOUPDATE_SETTING_KEY, [
 			'wordpress-plugins' => [],
@@ -51,17 +51,14 @@ class Update extends ApiBase
 		];
 	}
 
-	/**
-	 * @param WP_REST_Request $request
-	 */
-	public function update_autoupdate(WP_REST_Request $request)
+	public function update_autoupdate(\WP_REST_Request $request)
 	{
 		$types = ['wordpress-themes', 'wordpress-plugins'];
 		$type = $request->get_param('type');
 		$slug = $request->get_param('slug');
 		$enabled = $request->get_param('enabled');
 		if (!in_array($type, $types)) {
-			return new WP_Error(400, 'Error enabling auto-update');
+			return new \WP_Error(400, 'Error enabling auto-update');
 		}
 		$setting = get_option(Constants::AUTOUPDATE_SETTING_KEY, []);
 		if (!isset($setting[$type])) {

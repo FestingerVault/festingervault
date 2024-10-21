@@ -2,14 +2,12 @@
 
 namespace FestingerVault;
 
-use WP_Error;
-
 class Helper
 {
 	/**
 	 * @param string $path
 	 * @param array $data
-	 * @return array|WP_Error
+	 * @return array|\WP_Error
 	 */
 	public static function engine_post(string $path, $data = [], $cache = false)
 	{
@@ -37,7 +35,7 @@ class Helper
 			wp_remote_retrieve_response_code($result) !== 200 ||
 			isset($body['error'])
 		) {
-			return new WP_Error(
+			return new \WP_Error(
 				400,
 				$body['message'] ?? __('Something went wrong', 'festingervault')
 			);
@@ -54,7 +52,7 @@ class Helper
 	}
 
 	/**
-	 * @return array|WP_Error
+	 * @return array|\WP_Error
 	 */
 	public static function get_item_updates()
 	{
@@ -66,7 +64,7 @@ class Helper
 			'plugins' => $installed_plugins,
 		]);
 		if (is_wp_error($result)) {
-			return new WP_Error(400, 'Error Fetching Update List');
+			return new \WP_Error(400, 'Error Fetching Update List');
 		}
 		$data = [];
 		foreach ($result['data'] as $item) {

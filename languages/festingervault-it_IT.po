@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: festinger-vault\n"
 "Language-Team: Italian\n"
 "Language: it_IT\n"
-"PO-Revision-Date: 2024-09-30 20:37\n"
+"PO-Revision-Date: 2024-10-21 15:44\n"
 
 #: src/components/add-collection-dialog.tsx:104
 msgid "List Description"
@@ -24,17 +24,17 @@ msgstr ""
 
 #: src/components/add-collection-dialog.tsx:123
 msgid "Update Collection"
-msgstr ""
+msgstr "Aggiorna la collezione"
 
 #: src/components/add-collection-dialog.tsx:124
 #: src/hooks/use-collection.ts:117
 #: src/pages/collection/index.tsx:31
 msgid "Add New Collection"
-msgstr ""
+msgstr "Aggiungi nuova collezione"
 
 #: src/components/add-collection-dialog.tsx:90
 msgid "Create New Collection"
-msgstr ""
+msgstr "Crea una nuova collezione"
 
 #: src/components/add-collection-dialog.tsx:96
 msgid "List Title"
@@ -51,15 +51,15 @@ msgstr "%d crediti di download saranno consumati dal tuo account."
 
 #: src/components/additional-download-button.tsx:122
 msgid "Daily Limit: %s"
-msgstr ""
+msgstr "Limite giornaliero: %s"
 
 #: src/components/additional-download-button.tsx:128
 msgid "Used Limit: %s"
-msgstr ""
+msgstr "Limite usato: %s"
 
 #: src/components/additional-download-button.tsx:135
 msgid "Total Limit: %s"
-msgstr ""
+msgstr "Limite totale: %s"
 
 #: src/components/additional-download-button.tsx:152
 #: src/components/bulk-action.tsx:96
@@ -124,7 +124,7 @@ msgstr "Installa"
 
 #: src/components/collection-button.tsx:55
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #: src/components/data-table-faceted-filter.tsx:155
 msgid "Clear filters"
@@ -361,7 +361,7 @@ msgstr "Auto aggiornamento disattivato"
 
 #: src/hooks/use-auto-update.tsx:51
 msgid "Something went wrong. Try again later"
-msgstr ""
+msgstr "Qualcosa è andato storto. Riprova dopo"
 
 #: src/hooks/use-bulk.tsx:105
 msgid "Cart Cleared"
@@ -377,7 +377,7 @@ msgstr "Aggiunto alla coda"
 
 #: src/hooks/use-bulk.tsx:127
 msgid "Something went wrong"
-msgstr ""
+msgstr "Qualcosa è andato storto"
 
 #: src/hooks/use-bulk.tsx:157
 #: src/hooks/use-install.ts:124
@@ -415,27 +415,27 @@ msgstr ""
 
 #: src/hooks/use-collection.ts:120
 msgid "Creating Collection"
-msgstr ""
+msgstr "Sto creando la collezione"
 
 #: src/hooks/use-collection.ts:131
 msgid "Collection Updated"
-msgstr ""
+msgstr "Collezione aggiornata"
 
 #: src/hooks/use-collection.ts:132
 msgid "Collection Added"
-msgstr ""
+msgstr "Collezione aggiunta"
 
 #: src/hooks/use-collection.ts:149
 msgid "Removing Collection"
-msgstr ""
+msgstr "Sto rimuovendo la collezione"
 
 #: src/hooks/use-collection.ts:152
 msgid "Error Removing Collection"
-msgstr ""
+msgstr "Errore nel rimuovere una collezione"
 
 #: src/hooks/use-collection.ts:157
 msgid "Collection Removed"
-msgstr ""
+msgstr "Collezione rimossa"
 
 #: src/hooks/use-collection.ts:20
 msgid "You have reached your max collection limit."
@@ -447,7 +447,7 @@ msgstr ""
 
 #: src/hooks/use-collection.ts:71
 msgid "Adding to collection %s"
-msgstr ""
+msgstr "Sto aggiungendo alla collezione: %s"
 
 #: src/hooks/use-collection.ts:72
 msgid "Removing from collection %s"
@@ -463,7 +463,7 @@ msgstr ""
 
 #: src/hooks/use-collection.ts:95
 msgid "Added to collection %s"
-msgstr ""
+msgstr "Aggiunto alla collezione: %s"
 
 #: src/hooks/use-collection.ts:96
 msgid "Removed from collection %s"
@@ -537,11 +537,11 @@ msgstr "Scopri"
 
 #: src/hooks/use-sidebar.tsx:90
 msgid "Popular Themes"
-msgstr ""
+msgstr "Temi popolari"
 
 #: src/hooks/use-sidebar.tsx:95
 msgid "Popular Plugins"
-msgstr ""
+msgstr "Plugin popolari"
 
 #: src/pages/404.tsx:4
 msgid "404 Not Found"
@@ -616,7 +616,7 @@ msgid "Installed Assets"
 msgstr "Risorse installate"
 
 #: src/pages/_components/install-stats.tsx:56
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:43
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:45
 msgid "Installed"
 msgstr "Installato"
 
@@ -750,7 +750,7 @@ msgstr "Pagina %d"
 
 #: src/pages/collection/[cid]/-[page]/index.tsx:78
 msgid "No Items found in collection"
-msgstr ""
+msgstr "Nessun elemento trovato nella collezione"
 
 #: src/pages/collection/_components/collection.tsx:38
 msgid "Private"
@@ -774,7 +774,7 @@ msgstr "Modifica"
 
 #: src/pages/collection/index.tsx:46
 msgid "No Collections Found"
-msgstr ""
+msgstr "Nessuna collezione trovata"
 
 #: src/pages/history/_components/history-items.tsx:21
 #: src/pages/item/[slug]/-[page]/index.tsx:30
@@ -790,7 +790,7 @@ msgstr "Tipo"
 
 #: src/pages/history/_components/history-items.tsx:57
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:37
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:52
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:60
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:44
 msgid "Date"
 msgstr "Data"
@@ -825,7 +825,7 @@ msgid "Widget Ready"
 msgstr "Widget ready"
 
 #: src/pages/item/[slug]/-[page]/index.tsx:127
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:65
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:67
 msgid "Compatible With"
 msgstr "Compatibile con"
 
@@ -834,7 +834,7 @@ msgid "Files Included"
 msgstr "Files inclusi"
 
 #: src/pages/item/[slug]/-[page]/index.tsx:154
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:77
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:79
 msgid "Software Versions"
 msgstr "Versione software"
 
@@ -887,7 +887,7 @@ msgstr "Descrizione"
 
 #: src/pages/item/[slug]/detail/[id]/-[tab].tsx:49
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:65
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:95
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:103
 msgid "Changelog"
 msgstr "Changelog"
 
@@ -906,14 +906,14 @@ msgstr "Dettagli elemento"
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:76
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:40
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:115
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:123
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:110
 msgid "Loading..."
 msgstr "Caricamento..."
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:78
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:42
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:117
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:125
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:112
 msgid "No Items Found"
 msgstr "Nessun elemento trovato"
@@ -941,8 +941,12 @@ msgid "Invalid Tab?"
 msgstr "Tab non valida?"
 
 #: src/pages/item/[slug]/detail/[id]/_components/detail-tab-headers.tsx:37
-msgid "Live Preview"
-msgstr "Anteprima dal vivo"
+msgid "Original Author"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:50
+msgid "Compatible with latest version of WordPress"
+msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:28
 msgid "Name"
@@ -976,23 +980,27 @@ msgstr "Alta risoluzione"
 msgid "Details"
 msgstr "Dettagli"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:31
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:13
+msgid "Legal Disclaimer"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:32
 msgid "Downloads"
 msgstr "Downloads"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:44
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:45
 msgid "Installs"
 msgstr "Installazioni"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:55
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:57
 msgid "Tags"
 msgstr "Tags"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:59
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:61
 msgid "Browsers"
 msgstr "Browsers"
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:71
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:73
 msgid "Included Files"
 msgstr "File inclusi"
 
@@ -1046,7 +1054,7 @@ msgstr ""
 
 #: src/pages/settings/_components/Settings.tsx:207
 msgid "Save Settings"
-msgstr ""
+msgstr "Salva le impostazioni"
 
 #: src/pages/settings/_components/Settings.tsx:91
 msgid "Updating Settings"

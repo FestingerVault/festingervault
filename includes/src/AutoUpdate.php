@@ -2,8 +2,6 @@
 
 namespace FestingerVault;
 
-use Exception;
-
 use FestingerVault\exceptions\{
 	ItemDetailErrorException,
 	ItemDownloadDetailException
@@ -79,8 +77,8 @@ class AutoUpdate
 			$installer = new Installer($item_detail, $download_detail);
 			$installer->run();
 			return true;
-		} catch (Exception $e) {
-			throw new Exception($e->getMessage());
+		} catch (\Exception $e) {
+			throw new \Exception($e->getMessage());
 		}
 	}
 

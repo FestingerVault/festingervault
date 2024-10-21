@@ -3,8 +3,6 @@
 namespace FestingerVault\api;
 
 use FestingerVault\Constants;
-use WP_REST_Request;
-use WP_REST_Response;
 
 abstract class ApiBase
 {
@@ -31,7 +29,7 @@ abstract class ApiBase
 					],
 					$args,
 					[
-						'callback' => function (WP_REST_Request $request) use (
+						'callback' => function (\WP_REST_Request $request) use (
 							$args
 						) {
 							$response = $args['callback']($request);
@@ -43,7 +41,7 @@ abstract class ApiBase
 									'message' => $response->get_error_message(),
 								];
 							}
-							return new WP_REST_Response($response, $code);
+							return new \WP_REST_Response($response, $code);
 						},
 					]
 				)

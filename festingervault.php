@@ -3,7 +3,7 @@
  * Plugin Name: FestingerVault
  * Plugin URI: https://festingervault.com
  * Description: Imagine going to the forest of themes, buying a theme, and logging out. Now, you come to Festinger's, where we offer 25K+ premium themes and plugins directly from your dashboard.
- * Version: 5.0.0-dev.1.0.1727767560
+ * Version: 5.0.0-dev.1.0.1729525415
  * Requires at Least: 6.0
  * Requires PHP: 7.4
  * Author: FestingerVault
@@ -18,8 +18,8 @@ if (!defined('ABSPATH')) {
 	die();
 }
 
-if (file_exists(__DIR__ . "/includes/lib/autoload.php")) {
-	require_once __DIR__ . "/includes/lib/autoload.php";
+if (file_exists(__DIR__ . '/includes/lib/autoload.php')) {
+	require_once __DIR__ . '/includes/lib/autoload.php';
 	\FestingerVault\Plugin::get_instance(__FILE__);
 	\FestingerVault\Upgrade::get_instance(__FILE__);
 }

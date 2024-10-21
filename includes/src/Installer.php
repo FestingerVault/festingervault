@@ -2,11 +2,6 @@
 
 namespace FestingerVault;
 
-use WP_Error;
-use Theme_Upgrader;
-use Plugin_Upgrader;
-use WP_Ajax_Upgrader_Skin;
-
 class Installer
 {
 	/**
@@ -40,17 +35,17 @@ class Installer
 		}
 		$this->item_detail = $item_detail;
 		$this->download_detail = $download_detail;
-		$skin = new WP_Ajax_Upgrader_Skin([]);
+		$skin = new \WP_Ajax_Upgrader_Skin([]);
 		if ('wordpress-themes' == $item_detail['type']) {
-			$this->wp_installer = new Theme_Upgrader($skin);
+			$this->wp_installer = new \Theme_Upgrader($skin);
 		} else {
-			$this->wp_installer = new Plugin_Upgrader($skin);
+			$this->wp_installer = new \Plugin_Upgrader($skin);
 		}
 	}
 
 	/**
 	 * Runs installatin or update depending on whether the destination theme/plugin exists or not.
-	 * @return array|bool|WP_Error
+	 * @return array|bool|\WP_Error
 	 */
 	function run()
 	{
@@ -71,14 +66,14 @@ class Installer
 			]);
 			if (\is_wp_error($installed)) {
 				error_log($installed->get_error_message());
-				return new WP_Error(
+				return new \WP_Error(
 					400,
 					__('Error while Installing', 'festingervault')
 				);
 			}
 			return $installed;
 		}
-		return new WP_Error('invalid_destination', 'Installation failed');
+		return new \WP_Error('invalid_destination', 'Installation failed');
 	}
 
 	/**

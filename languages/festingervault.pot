@@ -610,7 +610,7 @@ msgid "Installed Assets"
 msgstr ""
 
 #: src/pages/_components/install-stats.tsx:56
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:43
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:45
 msgid "Installed"
 msgstr ""
 
@@ -784,7 +784,7 @@ msgstr ""
 
 #: src/pages/history/_components/history-items.tsx:57
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:37
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:52
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:60
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:44
 msgid "Date"
 msgstr ""
@@ -819,7 +819,7 @@ msgid "Widget Ready"
 msgstr ""
 
 #: src/pages/item/[slug]/-[page]/index.tsx:127
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:65
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:67
 msgid "Compatible With"
 msgstr ""
 
@@ -828,7 +828,7 @@ msgid "Files Included"
 msgstr ""
 
 #: src/pages/item/[slug]/-[page]/index.tsx:154
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:77
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:79
 msgid "Software Versions"
 msgstr ""
 
@@ -881,7 +881,7 @@ msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/-[tab].tsx:49
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:65
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:95
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:103
 msgid "Changelog"
 msgstr ""
 
@@ -900,14 +900,14 @@ msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:76
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:40
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:115
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:123
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:110
 msgid "Loading..."
 msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:78
 #: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:42
-#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:117
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:125
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:112
 msgid "No Items Found"
 msgstr ""
@@ -935,7 +935,11 @@ msgid "Invalid Tab?"
 msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/detail-tab-headers.tsx:37
-msgid "Live Preview"
+msgid "Original Author"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:50
+msgid "Compatible with latest version of WordPress"
 msgstr ""
 
 #: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:28
@@ -970,23 +974,27 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:31
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:13
+msgid "Legal Disclaimer"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:32
 msgid "Downloads"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:44
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:45
 msgid "Installs"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:55
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:57
 msgid "Tags"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:59
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:61
 msgid "Browsers"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:71
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:73
 msgid "Included Files"
 msgstr ""
 

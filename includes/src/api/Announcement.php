@@ -2,9 +2,6 @@
 
 namespace FestingerVault\api;
 
-use WP_Error;
-use WP_REST_Request;
-
 class Announcement extends ApiBase
 {
 	public function endpoints()
@@ -17,7 +14,7 @@ class Announcement extends ApiBase
 		];
 	}
 
-	public function latest(WP_REST_Request $request)
+	public function latest(\WP_REST_Request $request)
 	{
 		$url = 'https://meta.festingervault.com/c/announcements/11.json';
 		$key = 'fv_meta_topics';
@@ -32,7 +29,7 @@ class Announcement extends ApiBase
 			set_transient($key, $topics, 30 * MINUTE_IN_SECONDS);
 			return rest_ensure_response($topics);
 		}
-		return new WP_Error(
+		return new \WP_Error(
 			400,
 			__('Error loading announcements.', 'festingervault')
 		);
