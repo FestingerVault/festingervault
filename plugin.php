@@ -3,7 +3,7 @@
  * Plugin Name: FestingerVault
  * Plugin URI: https://festingervault.com
  * Description: Imagine going to the forest of themes, buying a theme, and logging out. Now, you come to Festinger's, where we offer 25K+ premium themes and plugins directly from your dashboard.
- * Version: 5.0.0-beta.3.0.6
+ * Version: 5.0.0-beta.3.0.7
  * Requires at Least: 6.0
  * Requires PHP: 7.4
  * Author: FestingerVault
