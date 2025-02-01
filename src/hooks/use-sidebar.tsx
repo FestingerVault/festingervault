@@ -88,10 +88,12 @@ export default function useSidebar() {
 				{
 					label: __('Popular Themes'),
 					icon: Palette,
+					disabled: !activated || !active,
 					href: '/popular/theme'
 				},
 				{
 					label: __('Popular Plugins'),
+					disabled: !activated || !active,
 					icon: ToyBrick,
 					href: '/popular/plugin'
 				}
@@ -101,20 +103,24 @@ export default function useSidebar() {
 			id: navIds.library,
 			label: __('Library'),
 			showLabel: true,
+
 			items: [
 				{
 					label: __('Themes'),
 					icon: Palette,
+					disabled: !activated || !active,
 					href: '/item/theme'
 				},
 				{
 					label: __('Plugins'),
 					icon: ToyBrick,
+					disabled: !activated || !active,
 					href: '/item/plugin'
 				},
 				{
 					label: __('Template Kits'),
 					icon: Drum,
+					disabled: !activated || !active,
 					href: '/item/template-kit'
 				},
 				{
@@ -132,6 +138,7 @@ export default function useSidebar() {
 				{
 					label: __('Updates'),
 					icon: Repeat,
+					disabled: !activated || !active,
 					href: '/updates',
 					useNotice: () => {
 						if (updateable && updateable.length > 0) {
