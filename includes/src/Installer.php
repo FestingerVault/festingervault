@@ -55,7 +55,7 @@ class Installer
 	function run()
 	{
 		$destination = false;
-		$slug = $this->item_detail['slug'][0]; // pick first slug for install destination
+		$slug = $this->item_detail['slugs'][0]; // pick first slug for install destination
 		if (!empty($this->slug)) {
 			$slug = $this->slug;
 		}
