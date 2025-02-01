@@ -1,0 +1,7 @@
+"project_id": CROWDIN_PROJECT_ID
+"api_token_env": "CROWDIN_API_TOKEN"
+
+"base_path": "languages"
+"files":
+  - source: "**/*.pot"
+    translation: "%file_name%-%locale_with_underscore%.po"
