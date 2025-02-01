@@ -1,0 +1,1216 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"X-Generator: babel-plugin-makepot\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: festinger-vault\n"
+"X-Crowdin-Project-ID: 710241\n"
+"X-Crowdin-Language: el\n"
+"X-Crowdin-File: festingervault.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Project-Id-Version: festinger-vault\n"
+"Language-Team: Greek\n"
+"Language: el_GR\n"
+"PO-Revision-Date: 2025-02-01 13:43\n"
+
+#: src/components/add-collection-dialog.tsx:104
+msgid "List Description"
+msgstr ""
+
+#: src/components/add-collection-dialog.tsx:117
+#: src/pages/collection/_components/collection.tsx:37
+msgid "Public"
+msgstr ""
+
+#: src/components/add-collection-dialog.tsx:123
+msgid "Update Collection"
+msgstr ""
+
+#: src/components/add-collection-dialog.tsx:124
+#: src/hooks/use-collection.ts:117
+#: src/pages/collection/index.tsx:31
+msgid "Add New Collection"
+msgstr ""
+
+#: src/components/add-collection-dialog.tsx:90
+msgid "Create New Collection"
+msgstr ""
+
+#: src/components/add-collection-dialog.tsx:96
+msgid "List Title"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:105
+msgid "Download demo content %s of %s"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:112
+#: src/components/install-button.tsx:147
+msgid "%d download credit would be consumed from your account."
+msgstr ""
+
+#: src/components/additional-download-button.tsx:121
+msgid "Daily Limit: %s"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:127
+msgid "Used Limit: %s"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:134
+msgid "Total Limit: %s"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:151
+#: src/components/bulk-action.tsx:99
+#: src/components/install-button.tsx:216
+#: src/pages/updates/_components/columns.tsx:47
+msgid "Download"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:157
+#: src/components/filter/filter-sheet.tsx:106
+#: src/components/install-button.tsx:246
+msgid "Cancel"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:48
+#: src/hooks/use-activation.tsx:86
+#: src/hooks/use-auto-update.tsx:36
+#: src/hooks/use-bulk.tsx:82
+#: src/hooks/use-download.tsx:39
+#: src/hooks/use-install.ts:94
+#: src/pages/updates/_components/updates-table.tsx:70
+msgid "License not activated"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:59
+#: src/components/download-manager.tsx:15
+#: src/hooks/use-install.ts:163
+msgid "Downloading"
+msgstr ""
+
+#: src/components/additional-download-button.tsx:64
+#: src/hooks/use-install.ts:131
+msgid "Successful"
+msgstr ""
+
+#: src/components/body/page-shell.tsx:63
+msgid "Invalid Request"
+msgstr ""
+
+#: src/components/body/page-shell.tsx:97
+#: src/hooks/use-sidebar.tsx:84
+msgid "Home"
+msgstr ""
+
+#: src/components/bulk-action.tsx:37
+msgid "Bulk Cart"
+msgstr ""
+
+#: src/components/bulk-action.tsx:38
+msgid "Your items"
+msgstr ""
+
+#: src/components/bulk-action.tsx:59
+msgid "Version: %s"
+msgstr ""
+
+#: src/components/bulk-action.tsx:80
+msgid "No items found in bulk cart"
+msgstr ""
+
+#: src/components/bulk-action.tsx:91
+#: src/components/install-button.tsx:204
+msgid "Install"
+msgstr ""
+
+#: src/components/collection-button.tsx:55
+msgid "List"
+msgstr ""
+
+#: src/components/data-table-faceted-filter.tsx:155
+msgid "Clear filters"
+msgstr ""
+
+#: src/components/data-table-faceted-filter.tsx:66
+msgid "%d selected"
+msgstr ""
+
+#: src/components/data-table-faceted-filter.tsx:97
+#: src/components/filter/filter-item.tsx:96
+msgid "No results found."
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:103
+msgid "Go to next page"
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:115
+msgid "Go to last page"
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:32
+msgid "%d result found"
+msgid_plural "%d results found"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/components/data-table-pagination.tsx:43
+msgid "Items per page"
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:72
+msgid "Page %d of %d"
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:79
+msgid "Go to first page"
+msgstr ""
+
+#: src/components/data-table-pagination.tsx:91
+msgid "Go to previous page"
+msgstr ""
+
+#: src/components/data-table-toolbar.tsx:78
+msgid "Reset"
+msgstr ""
+
+#: src/components/data-table.tsx:110
+msgid "No results found"
+msgstr ""
+
+#: src/components/download-manager.tsx:14
+msgid "Completed"
+msgstr ""
+
+#: src/components/download-manager.tsx:16
+msgid "Queued"
+msgstr ""
+
+#: src/components/download-manager.tsx:44
+msgid "Clear Completed"
+msgstr ""
+
+#: src/components/download-manager.tsx:55
+msgid "Progress: %s%%"
+msgstr ""
+
+#: src/components/filter/filter-bar.tsx:21
+#: src/components/filter/toolbars.tsx:36
+msgid "Order By"
+msgstr ""
+
+#: src/components/filter/filter-bar.tsx:52
+msgid "Clear Filters"
+msgstr ""
+
+#: src/components/filter/filter-item-list.tsx:124
+#: src/components/filter/filter-item.tsx:93
+msgid "Search"
+msgstr ""
+
+#: src/components/filter/filter-item.tsx:157
+msgid "Clear Filter"
+msgstr ""
+
+#: src/components/filter/filter-per-page.tsx:29
+msgid "Per Page"
+msgstr ""
+
+#: src/components/filter/filter-sheet.tsx:115
+msgid "Apply Filters"
+msgstr ""
+
+#: src/components/filter/filter-sheet.tsx:55
+msgid "Filters"
+msgstr ""
+
+#: src/components/filter/filter-sheet.tsx:62
+msgid "Select Filters to fine tune your search results."
+msgstr ""
+
+#: src/components/filter/search-input.tsx:27
+msgid "Search Title"
+msgstr ""
+
+#: src/components/header/mobile-sidenav.tsx:23
+msgid "Open menu"
+msgstr ""
+
+#: src/components/install-button.tsx:107
+msgid "Roll-back to version from %s to %s"
+msgstr ""
+
+#: src/components/install-button.tsx:116
+msgid "Update version from %s to %s"
+msgstr ""
+
+#: src/components/install-button.tsx:123
+msgid "Re-install version %s"
+msgstr ""
+
+#: src/components/install-button.tsx:131
+msgid "Install version %s"
+msgstr ""
+
+#: src/components/install-button.tsx:139
+msgid "Download version %s"
+msgstr ""
+
+#: src/components/install-button.tsx:202
+#: src/pages/updates/_components/updates-table.tsx:82
+msgid "Update"
+msgstr ""
+
+#: src/components/install-button.tsx:203
+#: src/pages/updates/_components/updates-table.tsx:115
+msgid "Re-Install"
+msgstr ""
+
+#: src/components/install-button.tsx:240
+msgid "Roll-Back"
+msgstr ""
+
+#: src/components/language-select.tsx:21
+msgid "English"
+msgstr ""
+
+#: src/components/language-select.tsx:26
+msgid "French"
+msgstr ""
+
+#: src/components/mode-toggle.tsx:23
+msgid "Toggle theme"
+msgstr ""
+
+#: src/components/mode-toggle.tsx:28
+msgid "Light"
+msgstr ""
+
+#: src/components/mode-toggle.tsx:31
+msgid "Dark"
+msgstr ""
+
+#: src/components/mode-toggle.tsx:34
+msgid "System"
+msgstr ""
+
+#: src/components/ui/pagination.tsx:84
+msgid "Previous"
+msgstr ""
+
+#: src/components/ui/pagination.tsx:99
+msgid "Next"
+msgstr ""
+
+#: src/config/activation-status.ts:4
+msgid "Active"
+msgstr ""
+
+#: src/config/activation-status.ts:5
+msgid "Inactive"
+msgstr ""
+
+#: src/config/activation-status.ts:6
+msgid "Expired"
+msgstr ""
+
+#: src/config/activation-status.ts:8
+msgid "Suspended"
+msgstr ""
+
+#: src/config/activation-status.ts:9
+msgid "Blocked"
+msgstr ""
+
+#: src/config/item.ts:17
+#: src/hooks/use-sidebar.tsx:106
+#: src/pages/_components/install-stats.tsx:32
+#: src/pages/updates/_components/updates-table.tsx:32
+msgid "Themes"
+msgstr ""
+
+#: src/config/item.ts:18
+msgid "Theme"
+msgstr ""
+
+#: src/config/item.ts:19
+msgid "Tailored Premium Themes"
+msgstr ""
+
+#: src/config/item.ts:24
+#: src/hooks/use-sidebar.tsx:111
+#: src/pages/_components/install-stats.tsx:38
+#: src/pages/updates/_components/updates-table.tsx:36
+msgid "Plugins"
+msgstr ""
+
+#: src/config/item.ts:25
+msgid "Plugin"
+msgstr ""
+
+#: src/config/item.ts:26
+msgid "Tailored Premium Plugins"
+msgstr ""
+
+#: src/config/item.ts:32
+msgid "Template Kit"
+msgstr ""
+
+#: src/config/item.ts:33
+#: src/hooks/use-sidebar.tsx:116
+msgid "Template Kits"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:26
+msgid "Deactivating License"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:27
+msgid "License Deactivated Successfully"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:28
+msgid "Error Deactivating License"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:49
+msgid "License Suspended"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:52
+msgid "Your license has been suspended. You won't be able to perform actions like installations, updates."
+msgstr ""
+
+#: src/hooks/use-activation.tsx:59
+msgid "Activation Suspended"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:62
+msgid "This domain activation has been suspended. You won't be able to perform actions like installations, updates."
+msgstr ""
+
+#: src/hooks/use-activation.tsx:69
+msgid "Domain Blocked"
+msgstr ""
+
+#: src/hooks/use-activation.tsx:72
+msgid "This domain has been blocked. You won't be able to perform actions like installations, updates."
+msgstr ""
+
+#: src/hooks/use-activation.tsx:87
+msgid "You have not activated license on this installation. You won't be able to perform actions like installations, updates."
+msgstr ""
+
+#: src/hooks/use-auto-update.tsx:42
+#: src/hooks/use-bulk.tsx:88
+#: src/hooks/use-download.tsx:43
+#: src/pages/updates/_components/updates-table.tsx:73
+msgid "License suspended"
+msgstr ""
+
+#: src/hooks/use-auto-update.tsx:55
+msgid "Updating Autoupdate"
+msgstr ""
+
+#: src/hooks/use-auto-update.tsx:60
+msgid "Autoupdate Enabled"
+msgstr ""
+
+#: src/hooks/use-auto-update.tsx:61
+msgid "Autoupdate Disabled"
+msgstr ""
+
+#: src/hooks/use-auto-update.tsx:65
+msgid "Something went wrong. Try again later"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:101
+msgid "Removed From Cart"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:114
+msgid "Cart Cleared"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:128
+msgid "Fetching Download Link"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:134
+msgid "Added to queue"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:136
+msgid "Something went wrong"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:166
+#: src/hooks/use-install.ts:125
+#: src/pages/updates/_components/updates-table.tsx:95
+msgid "Updating"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:167
+#: src/hooks/use-install.ts:127
+msgid "Installing"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:171
+#: src/pages/updates/_components/updates-table.tsx:99
+msgid "Success"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:175
+#: src/hooks/use-collection.ts:125
+#: src/pages/updates/_components/updates-table.tsx:103
+msgid "Error"
+msgstr ""
+
+#: src/hooks/use-bulk.tsx:93
+msgid "Added To Cart"
+msgstr ""
+
+#: src/hooks/use-collection.ts:119
+msgid "Updating Collection"
+msgstr ""
+
+#: src/hooks/use-collection.ts:120
+msgid "Creating Collection"
+msgstr ""
+
+#: src/hooks/use-collection.ts:131
+msgid "Collection Updated"
+msgstr ""
+
+#: src/hooks/use-collection.ts:132
+msgid "Collection Added"
+msgstr ""
+
+#: src/hooks/use-collection.ts:149
+msgid "Removing Collection"
+msgstr ""
+
+#: src/hooks/use-collection.ts:152
+msgid "Error Removing Collection"
+msgstr ""
+
+#: src/hooks/use-collection.ts:157
+msgid "Collection Removed"
+msgstr ""
+
+#: src/hooks/use-collection.ts:20
+msgid "You have reached your max collection limit."
+msgstr ""
+
+#: src/hooks/use-collection.ts:21
+msgid "You have reached your items per collection limit."
+msgstr ""
+
+#: src/hooks/use-collection.ts:71
+msgid "Adding to collection %s"
+msgstr ""
+
+#: src/hooks/use-collection.ts:72
+msgid "Removing from collection %s"
+msgstr ""
+
+#: src/hooks/use-collection.ts:81
+msgid "Error adding %s to collection"
+msgstr ""
+
+#: src/hooks/use-collection.ts:84
+msgid "Error removing from collection %s"
+msgstr ""
+
+#: src/hooks/use-collection.ts:95
+msgid "Added to collection %s"
+msgstr ""
+
+#: src/hooks/use-collection.ts:96
+msgid "Removed from collection %s"
+msgstr ""
+
+#: src/hooks/use-install.ts:120
+msgid "Roll-Back to version %s"
+msgstr ""
+
+#: src/hooks/use-install.ts:126
+msgid "Re-Installing"
+msgstr ""
+
+#: src/hooks/use-install.ts:169
+msgid "Added item to download queue."
+msgstr ""
+
+#: src/hooks/use-install.ts:171
+msgid "Error Initiating Download"
+msgstr ""
+
+#: src/hooks/use-setting.tsx:71
+msgid "Updating Settings"
+msgstr ""
+
+#: src/hooks/use-setting.tsx:72
+msgid "Error saving settings"
+msgstr ""
+
+#: src/hooks/use-setting.tsx:73
+msgid "Settings Saved"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:102
+msgid "Library"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:121
+msgid "Requests"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:127
+#: src/pages/collection/index.tsx:18
+msgid "Collections"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:133
+#: src/pages/_components/license-status.tsx:77
+#: src/pages/updates/index.tsx:16
+msgid "Updates"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:150
+#: src/pages/history/-[page].tsx:18
+msgid "History"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:163
+#: src/pages/activation/index.tsx:19
+msgid "License Activation"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:168
+#: src/pages/settings/index.tsx:13
+msgid "Settings"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:71
+msgid "Back to Dashboard"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:80
+msgid "Discover"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:89
+msgid "Popular Themes"
+msgstr ""
+
+#: src/hooks/use-sidebar.tsx:94
+msgid "Popular Plugins"
+msgstr ""
+
+#: src/pages/404.tsx:4
+msgid "404 Not Found"
+msgstr ""
+
+#: src/pages/_app.tsx:20
+msgid "OOPS!"
+msgstr ""
+
+#: src/pages/_app.tsx:23
+msgid "Something Went Wrong"
+msgstr ""
+
+#: src/pages/_app.tsx:33
+msgid "Go Back"
+msgstr ""
+
+#: src/pages/_components/announcements.tsx:20
+msgid "Announcements"
+msgstr ""
+
+#: src/pages/_components/announcements.tsx:27
+msgid "View All"
+msgstr ""
+
+#: src/pages/_components/announcements.tsx:50
+msgid "Updated %s"
+msgstr ""
+
+#: src/pages/_components/announcements.tsx:59
+msgid "No new announcements"
+msgstr ""
+
+#: src/pages/_components/available-updates.tsx:24
+msgid "Item Updates"
+msgstr ""
+
+#: src/pages/_components/available-updates.tsx:48
+msgid "Available: %s"
+msgstr ""
+
+#: src/pages/_components/available-updates.tsx:54
+msgid "Installed: %s"
+msgstr ""
+
+#: src/pages/_components/available-updates.tsx:67
+msgid "No Update Found"
+msgstr ""
+
+#: src/pages/_components/available-updates.tsx:76
+msgid "View All Updates"
+msgstr ""
+
+#: src/pages/_components/dashboard-welcome.tsx:35
+msgid "Unlimited themes, plugins and template kits,"
+msgstr ""
+
+#: src/pages/_components/dashboard-welcome.tsx:40
+msgid "all in one place"
+msgstr ""
+
+#: src/pages/_components/dashboard-welcome.tsx:44
+msgid "Access an unrivaled range of quality themes, plugins and template kits, with one simple subscription for a fraction of cost"
+msgstr ""
+
+#: src/pages/_components/dashboard-welcome.tsx:59
+msgid "Get Started"
+msgstr ""
+
+#: src/pages/_components/install-stats.tsx:49
+msgid "Installed Assets"
+msgstr ""
+
+#: src/pages/_components/install-stats.tsx:52
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:43
+msgid "Installed"
+msgstr ""
+
+#: src/pages/_components/install-stats.tsx:55
+msgid "Items"
+msgstr ""
+
+#: src/pages/_components/item-stats.tsx:13
+msgid "Total Products"
+msgstr ""
+
+#: src/pages/_components/item-stats.tsx:18
+msgid "Total Themes"
+msgstr ""
+
+#: src/pages/_components/item-stats.tsx:23
+msgid "Total Plugins"
+msgstr ""
+
+#: src/pages/_components/item-stats.tsx:28
+msgid "Total Kits"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:102
+msgid "%s of %s"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:120
+msgid "Install ID: %s"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:36
+msgid "Monthly Plan"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:37
+msgid "One-Time Plan"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:38
+msgid "Lifetime Plan"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:53
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:24
+msgid "Status"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:61
+msgid "Daily Today"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:70
+msgid "All-Time Limit"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:75
+msgid "Lifetime"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:87
+msgid "Never"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:90
+msgid "Expires"
+msgstr ""
+
+#: src/pages/_components/license-status.tsx:98
+msgid "Credits used:"
+msgstr ""
+
+#: src/pages/activation/_components/register-license.tsx:43
+msgid "Activating License"
+msgstr ""
+
+#: src/pages/activation/_components/register-license.tsx:46
+msgid "License Activated Successfully"
+msgstr ""
+
+#: src/pages/activation/_components/register-license.tsx:48
+msgid "Error Activating License"
+msgstr ""
+
+#: src/pages/activation/_components/register-license.tsx:69
+msgid "Enter License Key"
+msgstr ""
+
+#: src/pages/activation/_components/register-license.tsx:88
+#: src/pages/activation/index.tsx:26
+msgid "Activate License"
+msgstr ""
+
+#: src/pages/activation/index.tsx:25
+msgid "Activation Detail"
+msgstr ""
+
+#: src/pages/activation/index.tsx:39
+msgid "Are you sure you want to deactivate your license?"
+msgstr ""
+
+#: src/pages/activation/index.tsx:51
+msgid "Deactivate"
+msgstr ""
+
+#: src/pages/collection/[cid]/-[page]/index.tsx:44
+#: src/pages/collection/index.tsx:23
+msgid "Collection"
+msgstr ""
+
+#: src/pages/collection/[cid]/-[page]/index.tsx:52
+#: src/pages/item/[slug]/-[page]/index.tsx:284
+msgid "Page %d"
+msgstr ""
+
+#: src/pages/collection/[cid]/-[page]/index.tsx:78
+msgid "No Items found in collection"
+msgstr ""
+
+#: src/pages/collection/_components/collection.tsx:38
+msgid "Private"
+msgstr ""
+
+#: src/pages/collection/_components/collection.tsx:63
+msgid "No Description"
+msgstr ""
+
+#: src/pages/collection/_components/collection.tsx:74
+msgid "Are you sure you want to remove collection?"
+msgstr ""
+
+#: src/pages/collection/_components/collection.tsx:84
+msgid "Delete"
+msgstr ""
+
+#: src/pages/collection/_components/collection.tsx:94
+msgid "Edit"
+msgstr ""
+
+#: src/pages/collection/index.tsx:46
+msgid "No Collections Found"
+msgstr ""
+
+#: src/pages/history/_components/history-items.tsx:20
+#: src/pages/item/[slug]/-[page]/index.tsx:30
+msgid "Title"
+msgstr ""
+
+#: src/pages/history/_components/history-items.tsx:41
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:36
+#: src/pages/updates/_components/columns.tsx:82
+#: src/pages/updates/_components/updates-table.tsx:29
+msgid "Type"
+msgstr ""
+
+#: src/pages/history/_components/history-items.tsx:55
+#: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:38
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:53
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:44
+msgid "Date"
+msgstr ""
+
+#: src/pages/history/_components/history-items.tsx:65
+#: src/pages/item/[slug]/-[page]/_components/PostGridItem.tsx:67
+#: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:30
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:31
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:19
+msgid "Version"
+msgstr ""
+
+#: src/pages/index.tsx:17
+msgid "Dashboard"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/_components/PostGridItem.tsx:150
+msgid "Remove from bulk"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/_components/PostGridItem.tsx:151
+msgid "Add to Bulk"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/_components/PostGridItem.tsx:94
+#: src/pages/item/[slug]/detail/[id]/_components/detail-header.tsx:37
+msgid "Forked From"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:106
+msgid "Tag"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:121
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:79
+msgid "Widget Ready"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:138
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:34
+msgid "Compatible With"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:156
+msgid "Compatible Browsers"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:174
+msgid "Files Included"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:191
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:46
+msgid "Software Versions"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:209
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:90
+msgid "Access"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:226
+msgid "Additional Content"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:231
+msgid "Yes"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:235
+msgid "No"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:26
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:26
+msgid "Updated"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:34
+msgid "Popularity"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:52
+msgid "We couldn't find the item you're looking for, you can make a wish request"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:61
+msgid "Add Request"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/index.tsx:87
+msgid "Category"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:45
+#: src/pages/item/[slug]/detail/[id]/_components/item-description.tsx:15
+msgid "Description"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:50
+#: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:86
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:96
+msgid "Changelog"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:57
+msgid "Demo Contents [%d]"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:67
+#: src/pages/item/[slug]/detail/[id]/_components/item-comments.tsx:26
+msgid "Comments"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:74
+#: src/pages/item/[slug]/detail/[id]/_components/detail-tab-headers.tsx:73
+msgid "Support"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/-[tab].tsx:84
+msgid "Item Detail"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:75
+#: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:40
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:116
+#: src/pages/item/[slug]/detail/[id]/_components/item-comments.tsx:63
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:110
+msgid "Loading..."
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/changelog-preview.tsx:77
+#: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:42
+#: src/pages/item/[slug]/detail/[id]/_components/item-changelog.tsx:118
+#: src/pages/item/[slug]/detail/[id]/_components/item-comments.tsx:65
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:112
+msgid "No Items Found"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:29
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:90
+msgid "Demo Contents"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/demo-content-preview.tsx:51
+msgid "View More"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/detail-header.tsx:64
+msgid "Recently Updated"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/detail-header.tsx:77
+msgid "Demo Included"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/detail-tab-content.tsx:15
+msgid "Invalid Tab?"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/detail-tab-headers.tsx:36
+msgid "Live Preview"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-comments.tsx:76
+msgid "View more comments"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-demo-contents.tsx:28
+msgid "Name"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:107
+msgid "Details"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:21
+msgid "Slug"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:30
+msgid "Published"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:34
+msgid "Author"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:45
+msgid "Columns"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:56
+msgid "Gutenberg Optimized"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-detail.tsx:68
+msgid "High Resolution"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:19
+msgid "Legal Disclaimer"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:24
+msgid "Tags"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:28
+msgid "Browsers"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-sidebar.tsx:40
+msgid "Included Files"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-virus-total.tsx:14
+msgid "Virus Total"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-virus-total.tsx:22
+msgid "View Detail"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-virus-total.tsx:40
+msgid "%d threats"
+msgstr ""
+
+#: src/pages/item/[slug]/detail/[id]/_components/item-virus-total.tsx:61
+msgid "Scanning..."
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:21
+msgid "General"
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:26
+msgid "Auto Activate"
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:27
+msgid "Automatically activate themes/plugin upon installation."
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:40
+msgid "Remove Data?"
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:41
+msgid "Remove plugin settings and activation data on uninstall"
+msgstr ""
+
+#: src/pages/settings/_components/Settings.tsx:61
+#: src/pages/settings/_components/roles-editor.tsx:70
+msgid "Save Settings"
+msgstr ""
+
+#: src/pages/settings/_components/roles-editor.tsx:31
+msgid "Access Enabled"
+msgstr ""
+
+#: src/pages/settings/_components/roles-editor.tsx:32
+msgid "Enable access to other user groups other than site administrator."
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:108
+msgid "Available"
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:128
+msgid "Auto Update"
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:32
+msgid "Select all"
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:39
+msgid "Select row"
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:73
+msgid "Slug: %s"
+msgstr ""
+
+#: src/pages/updates/_components/columns.tsx:94
+msgid "Installed Version"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:128
+msgid "Re-installing"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:132
+msgid "Re-Install Success"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:138
+msgid "Error Installing"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:151
+msgid "Enable Auto-Update"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:164
+msgid "Disable Auto-Update"
+msgstr ""
+
+#: src/pages/updates/_components/updates-table.tsx:43
+msgid "Search downloads..."
+msgstr ""
+
+#: src/zod/bookmark.ts:12
+msgid "Summary cannot of more than 90 characters"
+msgstr ""
+
+#: src/zod/bookmark.ts:8
+msgid "Title cannot be empty"
+msgstr ""
+
+#: src/zod/bookmark.ts:9
+msgid "Title cannot of more than 30 characters"
+msgstr ""
+
+#: src/zod/item.ts:11
+msgid "Unknown Item Slug"
+msgstr ""
+
+#: src/zod/item.ts:7
+msgid "Unknown Item Type"
+msgstr ""
+
+#: src/zod/license.ts:6
+msgid "License Key Field is empty"
+msgstr ""
+
+#: src/zod/license.ts:7
+msgid "Enter valid license key"
+msgstr ""
+
+#: src/components/filter/filter-item.tsx:60
+msgctxt "Number of selected filter items"
+msgid "%d selected"
+msgstr ""
+
+#: src/components/install-button.tsx:156
+msgctxt "Plan Daily Limit"
+msgid "Daily Limit: %s"
+msgstr ""
+
+#: src/components/install-button.tsx:165
+msgctxt "Plan Used Limit (today)"
+msgid "Used Limit: %s"
+msgstr ""
+
+#: src/components/install-button.tsx:175
+msgctxt "Plan total available limit (applicable to onetime plans)"
+msgid "Total Limit: %s"
+msgstr ""
+
+#: src/pages/item/[slug]/-[page]/_components/PostGridItem.tsx:108
+#: src/pages/item/[slug]/detail/[id]/_components/detail-header.tsx:51
+msgctxt "In Category Name"
+msgid "In %s"
+msgstr ""
+
+#: src/pages/popular/-[slug]/index.tsx:32
+msgctxt "Popular Themes/Poluar Plugins"
+msgid "Popular %s"
+msgstr ""
+
