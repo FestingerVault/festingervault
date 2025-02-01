@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: festinger-vault\n"
 "Language-Team: Spanish\n"
 "Language: es_ES\n"
-"PO-Revision-Date: 2025-02-01 13:43\n"
+"PO-Revision-Date: 2025-02-01 15:27\n"
 
 #: src/components/add-collection-dialog.tsx:104
 msgid "List Description"
@@ -325,7 +325,7 @@ msgid "Blocked"
 msgstr ""
 
 #: src/config/item.ts:17
-#: src/hooks/use-sidebar.tsx:106
+#: src/hooks/use-sidebar.tsx:109
 #: src/pages/_components/install-stats.tsx:32
 #: src/pages/updates/_components/updates-table.tsx:32
 msgid "Themes"
@@ -340,7 +340,7 @@ msgid "Tailored Premium Themes"
 msgstr ""
 
 #: src/config/item.ts:24
-#: src/hooks/use-sidebar.tsx:111
+#: src/hooks/use-sidebar.tsx:115
 #: src/pages/_components/install-stats.tsx:38
 #: src/pages/updates/_components/updates-table.tsx:36
 msgid "Plugins"
@@ -359,7 +359,7 @@ msgid "Template Kit"
 msgstr ""
 
 #: src/config/item.ts:33
-#: src/hooks/use-sidebar.tsx:116
+#: src/hooks/use-sidebar.tsx:121
 msgid "Template Kits"
 msgstr ""
 
@@ -560,36 +560,36 @@ msgstr ""
 msgid "Settings Saved"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:102
+#: src/hooks/use-sidebar.tsx:104
 msgid "Library"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:121
+#: src/hooks/use-sidebar.tsx:127
 msgid "Requests"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:127
+#: src/hooks/use-sidebar.tsx:133
 #: src/pages/collection/index.tsx:18
 msgid "Collections"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:133
+#: src/hooks/use-sidebar.tsx:139
 #: src/pages/_components/license-status.tsx:77
 #: src/pages/updates/index.tsx:16
 msgid "Updates"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:150
+#: src/hooks/use-sidebar.tsx:157
 #: src/pages/history/-[page].tsx:18
 msgid "History"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:163
+#: src/hooks/use-sidebar.tsx:170
 #: src/pages/activation/index.tsx:19
 msgid "License Activation"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:168
+#: src/hooks/use-sidebar.tsx:175
 #: src/pages/settings/index.tsx:13
 msgid "Settings"
 msgstr ""
@@ -606,7 +606,7 @@ msgstr ""
 msgid "Popular Themes"
 msgstr ""
 
-#: src/hooks/use-sidebar.tsx:94
+#: src/hooks/use-sidebar.tsx:95
 msgid "Popular Plugins"
 msgstr ""
 
