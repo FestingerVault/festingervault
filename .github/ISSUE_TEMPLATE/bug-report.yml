@@ -1,0 +1,81 @@
+name: Bug Report
+description: Found a bug?
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - ssovit
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: issue-summary
+    attributes:
+      label: What happened?
+      description: Also tell us, what did you expect to happen? Don't share your credentias.
+      placeholder: Geek is fine, simple words are better
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A concise description of what you expected to happen.
+    validations:
+      required: false
+  - type: textarea
+    id: reproduce-steps
+    attributes:
+      label: Steps To Reproduce
+      description: Also tell us, what did you expect to happen?
+      placeholder: |
+        1. I clicked this
+        2. I have this membership
+        3. I clicked this
+        4. It didn't work
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: FestingerVault Plugin Version
+      description: What version of plugin are you using?
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP Version
+      description: PHP Version?
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: What browsers are you seeing the problem on?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant PHP log output
+      description: If you have WP_DEBUG enabled, We could use your log to drill down the issue.
+      render: shell
+  - type: textarea
+    id: console-log
+    attributes:
+      label: Browser Developer Console Log?
+      description: Console log can be helpful
+      render: shell
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: Finally!
+      description: This is important
+      options:
+        - label: I have looked at other issues and I am sure this bug isn't on open status.
+          required: true

@@ -1,0 +1,10 @@
+{
+  "slug": "festingervault",
+  "name": "FestingerVault",
+  "textdomain": "festingervault",
+  "logo": {
+    "dark": "https://raw.githubusercontent.com/FestingerVault/assets/refs/heads/main/logo-dark.png",
+    "light": "https://raw.githubusercontent.com/FestingerVault/assets/refs/heads/main/logo-light.png"
+  },
+  "whitelabel": false
+}

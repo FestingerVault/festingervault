@@ -1,0 +1,19 @@
+{
+	"exclude": ["node_modules"],
+	"include": ["src/**/*"],
+	"compilerOptions": {
+		"moduleResolution": "Node10",
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"jsx": "react-jsx",
+		"target": "ESNext",
+		"lib": [ "DOM","DOM.Iterable","ES2019"],
+		"module": "ESNext",
+		"types": ["vite/client"],
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
+}

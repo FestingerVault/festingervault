@@ -1,0 +1,5 @@
+build/*
+deploy/*
+.git/*
+includes/lib/*
+node_modules/*
