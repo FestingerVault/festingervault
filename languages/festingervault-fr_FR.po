@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: festinger-vault\n"
 "Language-Team: French\n"
 "Language: fr_FR\n"
-"PO-Revision-Date: 2025-02-01 15:27\n"
+"PO-Revision-Date: 2025-02-02 09:04\n"
 
 #: src/components/add-collection-dialog.tsx:104
 msgid "List Description"
@@ -1042,7 +1042,7 @@ msgstr ""
 msgid "High Resolution"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:19
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:21
 msgid "Legal Disclaimer"
 msgstr ""
 

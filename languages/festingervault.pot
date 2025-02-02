@@ -1042,7 +1042,7 @@ msgstr ""
 msgid "High Resolution"
 msgstr ""
 
-#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:19
+#: src/pages/item/[slug]/detail/[id]/_components/item-disclaimer.tsx:21
 msgid "Legal Disclaimer"
 msgstr ""
 

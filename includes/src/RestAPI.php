@@ -18,7 +18,7 @@ use FestingerVault\api\{
 class RestAPI
 {
 	/**
-	 * @var mixed
+	 * @var static
 	 */
 	private static $instance = null;
 
@@ -46,7 +46,7 @@ class RestAPI
 	/**
 	 * @param ApiBase $instance
 	 */
-	function register(ApiBase $instance)
+	private function register(ApiBase $instance)
 	{
 		$instance->register();
 	}

@@ -121,25 +121,12 @@ class Helper
 	 */
 	public static function get_site_information()
 	{
-		/** @var \wpdb $wpdb WP Database */
-		global $wpdb;
 		$site_url = get_site_url();
-		$admin_email = get_option('admin_email');
-		$table_prefix = $wpdb->prefix;
-		$plugin_uuid = get_option('fv_uuid');
 		$info = Plugin::info();
-		if (!$plugin_uuid) {
-			$plugin_uuid = wp_generate_uuid4();
-			update_option('fv_uuid', $plugin_uuid);
-		}
+
 		$data = [
 			'site_url' => $site_url,
-			'admin_email' => $admin_email,
-			'table_prefix' => $table_prefix,
-			'uuid' => $plugin_uuid,
-			'wp_path' => \ABSPATH,
-			'wp_version' => get_bloginfo('version'),
-			'fv_version' => $info['Version'] ?? null,
+			'plugin_version' => $info['Version'] ?? null,
 		];
 		return $data;
 	}
@@ -213,18 +200,14 @@ class Helper
 	{
 		global $wp_roles;
 
-		// Check if wp_roles is set
 		if (!isset($wp_roles)) {
 			$wp_roles = new \WP_Roles();
 		}
 
-		// Get the roles as an array
 		$roles = $wp_roles->roles;
 
-		// Initialize an empty array for the key => label roles
 		$res = [];
 
-		// Loop through each role and build the key => label array
 		foreach ($roles as $role_slug => $role_details) {
 			if ($role_slug === 'administrator') {
 				continue;

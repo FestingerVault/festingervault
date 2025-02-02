@@ -37,11 +37,14 @@ class AccessRoles
 				Constants::SETTING_KEY,
 				Constants::DEFAULT_SETTINGS
 			);
-			$enabled_roles = $settings['roles'];
-			if (!is_array($enabled_roles)) {
-				$enabled_roles = [];
-			}
+
 			if ($license_detail['roles'] == true) {
+				$enabled_roles = isset($settings['roles'])
+					? $settings['roles']
+					: null;
+				if (!is_array($enabled_roles)) {
+					$enabled_roles = [];
+				}
 				foreach (Helper::get_roles() as $role => $label) {
 					$roles[$role] = in_array($role, $enabled_roles);
 				}
