@@ -71,6 +71,8 @@
 		"date-fns": "^3.6.0",
 		"dotenv": "^16.4.5",
 		"html-react-parser": "^5.1.12",
+		"linkify-react": "^4.2.0",
+		"linkifyjs": "^4.2.0",
 		"lucide-react": "^0.396.0",
 		"millify": "^6.1.0",
 		"moment": "^2.30.1",

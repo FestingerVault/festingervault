@@ -96,8 +96,6 @@ export default function WPEnvProcess({
 				'Text Domain': env.TEXTDOMAIN,
 				'Requires at Least': env.MIN_WP,
 				'Requires PHP': env.MIN_PHP,
-				'Requires Plugins': env.REQUIRES_PLUGINS,
-				License: env.LICENSE,
 				'License URI': env.LICENSE_URL
 			};
 			Object.entries(headers).forEach(([key, value]) => {
