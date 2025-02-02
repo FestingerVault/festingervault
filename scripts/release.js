@@ -52,9 +52,6 @@ zip.writeZip(`./dist/${process.env.SLUG}.zip`);
 		requires: process.env.MIN_WP,
 		tested: process.env.TESTED_WP,
 		requires_php: process.env.MIN_PHP,
-		requires_plugins: process.env.REQUIRES_PLUGINS.split(',').map((i) =>
-			i.trim()
-		),
 		compatibility: [],
 		last_updated: moment().utc().format(),
 		added: moment().utc().format(),
