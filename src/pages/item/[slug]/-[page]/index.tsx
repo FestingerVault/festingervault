@@ -83,18 +83,18 @@ export default function Component() {
 			terms
 				? [
 						{
-							id: 'product_cat',
+							id: 'category',
 							label: __('Category'),
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'product_cat'
+									(i) => i.taxonomy === 'fv_category'
 								).length > 0,
 							onBarView: true,
 							isMulti: true,
 							showAll: true,
 							options: terms
-								?.filter((i) => i.taxonomy === 'product_cat')
+								?.filter((i) => i.taxonomy === 'fv_category')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -102,14 +102,14 @@ export default function Component() {
 								}))
 						},
 						{
-							id: 'post_tag',
+							id: 'tag',
 							label: __('Tag'),
 							isMulti: true,
 							enabled:
-								terms?.filter((i) => i.taxonomy === 'post_tag')
+								terms?.filter((i) => i.taxonomy === 'fv_tag')
 									.length > 0,
 							options: terms
-								?.filter((i) => i.taxonomy === 'post_tag')
+								?.filter((i) => i.taxonomy === 'fv_tag')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -122,11 +122,11 @@ export default function Component() {
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'widget_ready'
+									(i) => i.taxonomy === 'fv_widget_ready'
 								).length > 0,
 							isMulti: false,
 							options: terms
-								?.filter((i) => i.taxonomy === 'widget_ready')
+								?.filter((i) => i.taxonomy === 'fv_widget_ready')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -139,11 +139,11 @@ export default function Component() {
 							isMulti: false,
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'compatible_with'
+									(i) => i.taxonomy === 'fv_compatible_with'
 								).length > 0,
 							options: terms
 								?.filter(
-									(i) => i.taxonomy === 'compatible_with'
+									(i) => i.taxonomy === 'fv_compatible_with'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -175,11 +175,11 @@ export default function Component() {
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'files_included'
+									(i) => i.taxonomy === 'fv_files_included'
 								).length > 0,
 							isMulti: false,
 							options: terms
-								?.filter((i) => i.taxonomy === 'files_included')
+								?.filter((i) => i.taxonomy === 'fv_files_included')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -191,12 +191,12 @@ export default function Component() {
 							label: __('Software Versions'),
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'software_version'
+									(i) => i.taxonomy === 'fv_software_version'
 								).length > 0,
 							isMulti: false,
 							options: terms
 								?.filter(
-									(i) => i.taxonomy === 'software_version'
+									(i) => i.taxonomy === 'fv_software_version'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -211,10 +211,10 @@ export default function Component() {
 							onBarView: true,
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'access_level'
+									(i) => i.taxonomy === 'fv_access_level'
 								).length > 0,
 							options: terms
-								?.filter((i) => i.taxonomy === 'access_level')
+								?.filter((i) => i.taxonomy === 'fv_access_level')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),

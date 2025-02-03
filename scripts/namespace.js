@@ -29,7 +29,6 @@ const updateComposer = () => {
       "utf8",
     );
   } catch (e) {
-    console.log(e);
   }
 };
 

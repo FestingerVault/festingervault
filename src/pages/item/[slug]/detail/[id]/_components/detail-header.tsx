@@ -37,7 +37,7 @@ export default function ItemDetailHeader({ item }: Props) {
 					<span>{__('Forked From')}</span>
 					<a
 						href={item.product_url}
-						className="text-secondary"
+						className="text-foreground"
 						target="_blank"
 						rel="noreferrer"
 					>
@@ -50,7 +50,7 @@ export default function ItemDetailHeader({ item }: Props) {
 					{sprintf(
 						_x('In %s', 'In Category Name'),
 						item.terms
-							?.filter((term) => term.taxonomy === 'product_cat')
+							?.filter((term) => term.taxonomy === 'fv_category')
 							.map((term) => decodeEntities(term.name))
 							.join(', ')
 					)}

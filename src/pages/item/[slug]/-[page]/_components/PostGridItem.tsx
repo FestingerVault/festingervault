@@ -70,7 +70,7 @@ export default function PostGridItem({ item }: Props) {
 						</Badge>
 					)}
 					{item.terms
-						?.filter((term) => term.taxonomy === 'access_level')
+						?.filter((term) => term.taxonomy === 'fv_access_level')
 						.map((term: TTerm<TItemAccessLevelEnum>) => (
 							<Badge
 								key={term.id}
@@ -94,7 +94,7 @@ export default function PostGridItem({ item }: Props) {
 								<span>{__('Forked From')}</span>
 								<a
 									href={item.product_url}
-									className="text-secondary"
+									className="text-foreground"
 									target="_blank"
 									rel="noreferrer"
 								>
@@ -108,7 +108,7 @@ export default function PostGridItem({ item }: Props) {
 							_x('In %s', 'In Category Name'),
 							item.terms
 								?.filter(
-									(term) => term.taxonomy === 'product_cat'
+									(term) => term.taxonomy === 'fv_category'
 								)
 								.map((term) => decodeEntities(term.name))
 								.join(', ')
@@ -116,8 +116,8 @@ export default function PostGridItem({ item }: Props) {
 					</CardDescription>
 					<div className="flex items-center gap-2 text-gray-400">
 						<div className="flex items-center gap-1 text-xs">
-							<Clock width={11} />{' '}
-							{moment.unix(item.updated).fromNow()}
+							<Clock width={11} />
+							<span>{moment.unix(item.updated).fromNow()}</span>
 						</div>
 						<div className="flex items-center gap-1 text-xs">
 							<Info width={11} /> {item.version}

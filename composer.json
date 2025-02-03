@@ -1,5 +1,5 @@
 {
-    "name": "sovit/festingervault",
+    "name": "project/plugin",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "config": {
@@ -10,11 +10,5 @@
             "FestingerVault\\": "includes/src/"
         }
     },
-    "authors": [
-        {
-            "name": "Sovit Tamrakar",
-            "email": "sovit.tamrakar@gmail.com"
-        }
-    ],
     "minimum-stability": "stable"
 }

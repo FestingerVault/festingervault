@@ -22,11 +22,12 @@ Imagine going to the forest of themes, buying a theme, and logging out. Now, you
     ```bash
     git clone https://github.com/FestingerVault/festingervault.git wp-content/plugins/festingervault
     ```
-2. Run `npm install` to install node packages
-3. Run `composer install` to install composer packages
-4. Run `npm run build` or `npm start`
-5. Go to your Dashboard > Plugins.
-6. Find "FestingerVault" in the list and click "Activate."
+2. rename `.env.example` to `.env` and change the values as required.
+3. Run `npm install` to install node packages
+4. Run `composer install` to install composer packages
+5. Run `npm run build` or `npm start`
+6. Go to your Dashboard > Plugins.
+7. Find "FestingerVault" in the list and click "Activate."
 
 ## Contributing
 

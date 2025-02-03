@@ -22,18 +22,18 @@ export default function ItemSidebar({ item }: Props) {
 				params.tab != 'changelog' && <ChangelogPreview item={item} />}
 			<ItemTerms
 				title={__('Tags')}
-				terms={item.terms.filter((i) => i.taxonomy === 'post_tag')}
+				terms={item.terms.filter((i) => i.taxonomy === 'fv_tag')}
 			/>
 			<ItemTerms
 				title={__('Browsers')}
 				terms={item.terms.filter(
-					(i) => i.taxonomy === 'compatible_browsers'
+					(i) => i.taxonomy === 'fv_compatible_browsers'
 				)}
 			/>
 			<ItemTerms
 				title={__('Compatible With')}
 				terms={item.terms.filter(
-					(i) => i.taxonomy === 'compatible_with'
+					(i) => i.taxonomy === 'fv_compatible_with'
 				)}
 			/>
 			<ItemTerms
