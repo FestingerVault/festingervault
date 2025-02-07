@@ -16,6 +16,10 @@
 		"namespace": "node ./scripts/namespace.js",
 		"prepare": "husky"
 	},
+	"engines": {
+		"node": ">18",
+		"npm": ">9"
+	},
 	"keywords": [],
 	"author": "",
 	"license": "GPLv2 or later",
