@@ -2,7 +2,8 @@
 
 namespace FestingerVault\api;
 
-use FestingerVault\{Helper, Installer};
+use FestingerVault\Helper;
+use FestingerVault\Installer;
 
 class Item extends ApiBase
 {
@@ -16,8 +17,10 @@ class Item extends ApiBase
 	public function terms(\WP_REST_Request $request)
 	{
 		$type = $request->get_param('type');
-		return Helper::engine_post('item/terms', [
+		$cursor = $request->get_param('cursor');
+		return Helper::engine_post('item/paginated-terms', [
 			'type' => $type,
+			'cursor' => $cursor,
 		]);
 	}
 
