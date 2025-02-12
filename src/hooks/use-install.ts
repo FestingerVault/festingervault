@@ -34,7 +34,7 @@ export default function useInstall() {
 		PluginInstallResponse,
 		PluginInstallSchema
 	>('item/install');
-	const { data: activation } = useActivation();
+	const { data: activation, can_install,can_download } = useActivation();
 
 	const isInstallable = useCallback(
 		(item: TPostItem) => ['theme', 'plugin'].includes(item.type),
@@ -101,7 +101,13 @@ export default function useInstall() {
 		(item: TPostItem, media: TPostMedia) =>
 			new Promise<PluginInstallResponse>((resolve, reject) => {
 				if (!checkActivation()) {
-					reject('');
+					reject(
+						__("License not activated")
+					);
+				}
+				if(!can_install){
+					reject(__("Installation not allowed"));
+					toast.error(__("Installation not allowed"))
 				}
 				const is_rollback = isRollBack(item, media);
 				const installed = isInstalled(item);
@@ -137,20 +143,17 @@ export default function useInstall() {
 					}
 				);
 			}),
-		[
-			checkActivation,
-			isRollBack,
-			isInstalled,
-			isNewerVersion,
-			installPlugin,
-			clearCache
-		]
+		[checkActivation, can_install, isRollBack, isInstalled, isNewerVersion, installPlugin, clearCache]
 	);
 	const downloadItem = useCallback(
 		(item: TPostItem, media: TPostMedia) =>
 			new Promise<PluginInstallResponse>((resolve, reject) => {
 				if (!checkActivation()) {
-					reject('');
+					reject(__("License not activated"));
+				}
+				if(!can_download){
+					reject(__("Download not allowed"));
+					toast.error(__("Download not allowed"))
 				}
 				toast.promise(
 					installPlugin({
@@ -177,7 +180,7 @@ export default function useInstall() {
 					}
 				);
 			}),
-		[addDownloadTask, checkActivation, clearCache, installPlugin]
+		[addDownloadTask, can_download, checkActivation, clearCache, installPlugin]
 	);
 
 	return {

@@ -52,7 +52,7 @@ export default function useAutoUpdate() {
 					}),
 					{
 						description: decodeEntities(item.title),
-						loading: __('Updating Autoupdate'),
+						loading: __('Updating Autoupdate setting'),
 						success(data) {
 							clearCache();
 							resolve(data);

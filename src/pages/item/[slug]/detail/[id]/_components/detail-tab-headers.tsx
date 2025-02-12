@@ -8,6 +8,7 @@ import { TPostItem } from '@/types/item';
 import { Slot } from '@radix-ui/react-slot';
 import { ExternalLink, Heart } from 'lucide-react';
 import { DetailTabType } from '../-[tab]';
+import BulkButton from '@/components/bulk-button';
 
 type Props = {
 	item: TPostItem;
@@ -47,6 +48,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 							<Heart size={16} />
 						</Button>
 					</CollectionButton>
+					<BulkButton item={item} />
 					{/* <Button
 						size="icon"
 						variant="outline"

@@ -33,7 +33,7 @@ type Props = {
 
 export default function InstallButton({ item, media, size, variant }: Props) {
 	const navigate = useNavigate();
-	const { data: activation, activated, active } = useActivation();
+	const { data: activation, activated, active, can_download, can_install } = useActivation();
 	const [isPending, setIsPending] = useState<boolean>(false);
 	const {
 		isInstalled,
@@ -60,7 +60,7 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 				.catch(() => setIsPending(false));
 		}
 	}
-	return (
+	return can_install && can_download && (
 		<Drawer>
 			<DrawerTrigger asChild>
 				<Button
@@ -190,6 +190,7 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 								<DrawerClose asChild>
 									<Button
 										onClick={() => install(false)}
+										disabled={!can_install}
 										variant="default"
 										className="gap-2"
 									>
@@ -209,6 +210,7 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 							<DrawerClose asChild>
 								<Button
 									onClick={() => install(true)}
+									disabled={!can_download}
 									variant="outline"
 									className="gap-2"
 								>
@@ -216,7 +218,7 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 									<span>{__('Download')}</span>
 								</Button>
 							</DrawerClose>
-							{tab !== 'changelog' && installable && (
+							{tab !== 'changelog' && installable && can_install && (
 								<DrawerClose asChild>
 									<Button
 										onClick={() =>

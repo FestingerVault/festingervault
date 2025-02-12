@@ -29,6 +29,22 @@ class AutoUpdate
 
 	public function autoupdate_check()
 	{
+		$activation_detail = Helper::get_activation_detail();
+		if ($activation_detail === false) {
+			return null;
+		}
+		if (
+			isset($activation_detail['autoupdate']) &&
+			$activation_detail['autoupdate'] !== true
+		) {
+			return;
+		}
+		if (
+			isset($activation_detail['install_allowed']) &&
+			$activation_detail['install_allowed'] === false
+		) {
+			return null;
+		}
 		$settings = get_option(Constants::AUTOUPDATE_SETTING_KEY);
 		$engine_data = Helper::get_item_updates();
 		if (!is_wp_error($engine_data)) {
@@ -57,6 +73,22 @@ class AutoUpdate
 	}
 	public function autoupdate_item($item_id, $slug = null)
 	{
+		$activation_detail = Helper::get_activation_detail();
+		if ($activation_detail === false) {
+			return;
+		}
+		if (
+			isset($activation_detail['autoupdate']) &&
+			$activation_detail['autoupdate'] !== true
+		) {
+			return;
+		}
+		if (
+			isset($activation_detail['install_allowed']) &&
+			$activation_detail['install_allowed'] === false
+		) {
+			return;
+		}
 		try {
 			$item_detail = Helper::engine_post('item/detail', [
 				'item_id' => $item_id,

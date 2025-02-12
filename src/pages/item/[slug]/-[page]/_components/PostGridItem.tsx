@@ -1,3 +1,4 @@
+import BulkButton from '@/components/bulk-button';
 import CollectionButton from '@/components/collection-button';
 import InstallButton from '@/components/install-button';
 import { Badge } from '@/components/ui/badge';
@@ -11,8 +12,6 @@ import {
 	CardTitle
 } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import useActivation from '@/hooks/use-activation';
-import useBulk from '@/hooks/use-bulk';
 import { __, _x } from '@/lib/i18n';
 import placeholder from '@/lib/placeholder';
 import { TypeToItemType } from '@/lib/type-to-slug';
@@ -20,7 +19,7 @@ import { cn } from '@/lib/utils';
 import { TItemAccessLevelEnum, TPostItem, TTerm } from '@/types/item';
 import { decodeEntities } from '@wordpress/html-entities';
 import { sprintf } from '@wordpress/i18n';
-import { Clock, Eye, Info, ShoppingBag } from 'lucide-react';
+import { Clock, Eye, Info } from 'lucide-react';
 import moment from 'moment';
 import { Link, useNavigate } from 'react-router-dom';
 export function PostGridItemSkeleton() {
@@ -43,9 +42,6 @@ type Props = {
 };
 export default function PostGridItem({ item }: Props) {
 	const navigate = useNavigate();
-	const { addItem, hasItem, removeItem } = useBulk();
-	const { activated, active } = useActivation();
-
 	const item_type = TypeToItemType(item.type);
 	return (
 		<Card className="group/item flex flex-col justify-between transition-all duration-300">
@@ -140,32 +136,8 @@ export default function PostGridItem({ item }: Props) {
 					>
 						<Eye width={16} />
 					</Button>
-					<Button
-						variant={hasItem(item.id) ? 'secondary' : 'outline'}
-						size="icon"
-						className="flex items-center gap-2"
-						disabled={!activated || !active}
-						title={
-							hasItem(item.id) === true
-								? __('Remove from bulk')
-								: __('Add to Bulk')
-						}
-						onClick={() => {
-							if (hasItem(item.id) === true) {
-								removeItem(item.id);
-							} else {
-								addItem({
-									id: Number(item.id),
-									type: item.type,
-									image: item.thumbnail ?? item.image,
-									title: item.title,
-									version: item.version
-								});
-							}
-						}}
-					>
-						<ShoppingBag width={16} />
-					</Button>
+					<BulkButton item={item} />
+
 					<CollectionButton
 						item={item}
 						size="icon"

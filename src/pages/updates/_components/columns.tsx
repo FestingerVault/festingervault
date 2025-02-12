@@ -127,7 +127,7 @@ export const columns: ColumnDef<TThemePluginItem>[] = [
 		accessorKey: 'autoupdate',
 		header: __('Auto Update'),
 		cell: ({ row }) => {
-			return <AutoUpdateSwitcher row={row} />;
+			return <AutoUpdateSwitcher item={row.original} />;
 		},
 		enableSorting: true,
 		sortingFn: (rowA) => {
@@ -151,6 +151,7 @@ export const columns: ColumnDef<TThemePluginItem>[] = [
 			);
 		},
 		enableHiding: false,
-		enableSorting: false
+		enableSorting: false,
+
 	}
 ];

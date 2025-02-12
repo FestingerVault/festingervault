@@ -15,7 +15,7 @@ abstract class ApiBase
 		add_action('rest_api_init', [$this, 'rest_api_init']);
 	}
 
-	final function rest_api_init()
+	final public function rest_api_init()
 	{
 		$route_ns = Constants::SLUG . '/v1/' . $this->prefix();
 		foreach ($this->endpoints() as $route => $args) {

@@ -72,6 +72,7 @@ class Setting extends ApiBase
 			$setting[$key] = $request->get_param($key);
 		}
 		update_option(Constants::SETTING_KEY, $setting);
+		Helper::update_capabilities();
 		return ['success' => true];
 	}
 	public function get_roles()

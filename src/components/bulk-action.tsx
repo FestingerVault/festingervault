@@ -18,8 +18,8 @@ import { Alert } from './ui/alert';
 import { Button } from './ui/button';
 export default function BulkAction() {
 	const { items, removeItem, install, download } = useBulk();
-	const { active, activated } = useActivation();
-	return (
+	const { active, activated, can_bulk_download, can_bulk_install } = useActivation();
+	return (can_bulk_download || can_bulk_install) && (
 		<Sheet>
 			<SheetTrigger asChild>
 				<Button
@@ -83,22 +83,22 @@ export default function BulkAction() {
 				</div>
 
 				<SheetFooter className="gap-4">
-					<SheetClose asChild>
+					{can_bulk_install && <SheetClose asChild>
 						<Button
 							disabled={items.length === 0}
 							onClick={install}
 						>
 							{__('Install')}
 						</Button>
-					</SheetClose>
-					<SheetClose asChild>
+					</SheetClose>}
+					{can_bulk_download && <SheetClose asChild>
 						<Button
 							disabled={items.length === 0}
 							onClick={download}
 						>
 							{__('Download')}
 						</Button>
-					</SheetClose>
+					</SheetClose>}
 				</SheetFooter>
 			</SheetContent>
 		</Sheet>
