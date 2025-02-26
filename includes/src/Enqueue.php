@@ -5,9 +5,7 @@ class Enqueue
 {
 	private static $instance = null;
 
-	public function __construct()
-	{
-	}
+	public function __construct() {}
 
 	public static function get_instance()
 	{
