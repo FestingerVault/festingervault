@@ -1,3 +1,4 @@
+import BulkButton from '@/components/bulk-button';
 import CollectionButton from '@/components/collection-button';
 import InstallButton from '@/components/install-button';
 import { Button } from '@/components/ui/button';
@@ -8,7 +9,6 @@ import { TPostItem } from '@/types/item';
 import { Slot } from '@radix-ui/react-slot';
 import { ExternalLink, Heart } from 'lucide-react';
 import { DetailTabType } from '../-[tab]';
-import BulkButton from '@/components/bulk-button';
 
 type Props = {
 	item: TPostItem;

@@ -4,6 +4,7 @@ import path from 'path';
 import { defineConfig } from 'vite';
 import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import viteWpReact from './src/vite/wp-react';
+
 function randomString(size = 6) {
 	return Crypto.randomBytes(size).toString('hex').slice(0, size);
 }

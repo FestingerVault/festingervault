@@ -34,17 +34,18 @@ class AutoUpdate
 			return null;
 		}
 		if (
-			isset($activation_detail['autoupdate']) &&
-			$activation_detail['autoupdate'] !== true
-		) {
-			return;
-		}
-		if (
 			isset($activation_detail['install_allowed']) &&
 			$activation_detail['install_allowed'] === false
 		) {
 			return null;
 		}
+		if (
+			isset($activation_detail['autoupdate']) &&
+			$activation_detail['autoupdate'] !== true
+		) {
+			return null;
+		}
+
 		$settings = get_option(Constants::AUTOUPDATE_SETTING_KEY);
 		$engine_data = Helper::get_item_updates();
 		if (!is_wp_error($engine_data)) {
@@ -78,17 +79,18 @@ class AutoUpdate
 			return;
 		}
 		if (
-			isset($activation_detail['autoupdate']) &&
-			$activation_detail['autoupdate'] !== true
-		) {
-			return;
-		}
-		if (
 			isset($activation_detail['install_allowed']) &&
 			$activation_detail['install_allowed'] === false
 		) {
 			return;
 		}
+		if (
+			isset($activation_detail['autoupdate']) &&
+			$activation_detail['autoupdate'] !== true
+		) {
+			return;
+		}
+
 		try {
 			$item_detail = Helper::engine_post('item/detail', [
 				'item_id' => $item_id,

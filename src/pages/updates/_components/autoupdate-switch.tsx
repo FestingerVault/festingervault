@@ -14,7 +14,10 @@ export default function AutoUpdateSwitcher({ item }: Props) {
 	return (
 		<Switch
 			checked={
-				(activated && active && can_autoupdate) && setting &&
+				activated &&
+				active &&
+				can_autoupdate &&
+				setting &&
 				setting[item.type] &&
 				setting[item.type]?.includes(item.slug)
 			}

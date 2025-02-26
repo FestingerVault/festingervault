@@ -31,11 +31,14 @@ export default function useActivation() {
 			}
 		});
 	}, [deactivateAsync, queryClient]);
-	const can_bulk_download=useMemo(()=>data?.bulk_download===true,[data]);
-	const can_bulk_install=useMemo(()=>data?.bulk_install===true,[data]);
-	const can_install=useMemo(()=>data?.install_allowed===true,[data]);
-	const can_download=useMemo(()=>data?.download_allowed===true,[data]);
-	const can_autoupdate=useMemo(()=>data?.autoupdate===true,[data]);
+	const can_bulk_download = useMemo(
+		() => data?.bulk_download === true,
+		[data]
+	);
+	const can_bulk_install = useMemo(() => data?.bulk_install === true, [data]);
+	const can_install = useMemo(() => data?.install_allowed === true, [data]);
+	const can_download = useMemo(() => data?.download_allowed === true, [data]);
+	const can_autoupdate = useMemo(() => data?.autoupdate === true, [data]);
 	const activated = useMemo(() => data?.status !== 'not-activated', [data]);
 	const active = useMemo(() => data?.status === 'active', [data]);
 	const statusToNotice = useMemo(

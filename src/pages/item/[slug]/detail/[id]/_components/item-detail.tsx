@@ -49,8 +49,8 @@ export default function ItemDetail({ item }: Props) {
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'fv_documentation').length >
-					0
+					item.terms.filter((i) => i.taxonomy === 'fv_documentation')
+						.length > 0
 			},
 			{
 				label: __('Gutenberg Optimized'),
@@ -72,8 +72,9 @@ export default function ItemDetail({ item }: Props) {
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'fv_high_resolution')
-						.length > 0
+					item.terms.filter(
+						(i) => i.taxonomy === 'fv_high_resolution'
+					).length > 0
 			},
 			{
 				label: __('Widget Ready'),

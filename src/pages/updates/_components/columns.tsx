@@ -151,7 +151,6 @@ export const columns: ColumnDef<TThemePluginItem>[] = [
 			);
 		},
 		enableHiding: false,
-		enableSorting: false,
-
+		enableSorting: false
 	}
 ];

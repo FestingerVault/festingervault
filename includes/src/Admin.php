@@ -23,10 +23,7 @@ class Admin
 	function __construct()
 	{
 		add_action('admin_menu', [$this, 'admin_menu']);
-		add_action(
-			'admin_enqueue_scripts',
-			[$this, 'admin_enqueue_scripts']
-		);
+		add_action('admin_enqueue_scripts', [$this, 'admin_enqueue_scripts']);
 		add_action('admin_init', [$this, 'admin_init']);
 	}
 
@@ -72,7 +69,6 @@ class Admin
 			[$this, 'render_page'],
 			'dashicons-smiley',
 			1
-
 		);
 	}
 

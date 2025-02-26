@@ -66,14 +66,14 @@ export function BulkProvider({
 	});
 	const { addTask: addQueueTask } = useTaskQueue();
 	const { clearCache, list } = useInstalled();
-	const { active, activated, can_bulk_download, can_bulk_install } = useActivation();
+	const { active, activated, can_bulk_download, can_bulk_install } =
+		useActivation();
 	const { mutateAsync: installAsync } = useApiMutation<
 		PluginInstallResponse,
 		PluginInstallSchema
 	>('item/install');
 	useEffect(() => {
 		const parsed = itemsSchema.safeParse(items);
-		console.log(parsed.error)
 		if (parsed.success) {
 			localStorage.setItem(storageKey, JSON.stringify(parsed.data));
 		}
@@ -117,8 +117,8 @@ export function BulkProvider({
 	};
 
 	const download = () => {
-		if(!can_bulk_download){
-			toast.error(__("Bulk download not allowed"));
+		if (!can_bulk_download) {
+			toast.error(__('Bulk download not allowed'));
 			return;
 		}
 		items.forEach((item) => {
@@ -155,8 +155,8 @@ export function BulkProvider({
 		});
 	};
 	const install = () => {
-		if(!can_bulk_install){
-			toast.error(__("Bulk install not allowed"));
+		if (!can_bulk_install) {
+			toast.error(__('Bulk install not allowed'));
 			return;
 		}
 		items.forEach((item) => {

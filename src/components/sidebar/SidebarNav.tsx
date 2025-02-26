@@ -37,18 +37,32 @@ function linkStyle({ active, disabled, className, ...props }: LinkStyleProps) {
 	);
 }
 
+import { useMemo } from 'react'; // Add this import at the top
+
 export function SidebarNav() {
 	const isCollapsed = false;
 
 	const { pathname } = useLocation();
 	const { items } = useSidebar();
+
+	// Memoize the useNotice functions for each item to ensure stability
+	const memoizedItems = useMemo(() => {
+		return items.map((nav) => ({
+			...nav,
+			items: nav.items.map((item) => ({
+				...item,
+				useNotice: item.useNotice // Assuming useNotice is defined per item
+			}))
+		}));
+	}, [items]);
+
 	return (
 		<TooltipProvider
 			disableHoverableContent
 			delayDuration={0}
 		>
 			<nav>
-				{items.map((nav, index) => (
+				{memoizedItems.map((nav, index) => (
 					<div key={nav.id}>
 						{nav.showLabel && (
 							<h3 className="mb-2 px-2 pt-3 text-xs font-semibold uppercase text-muted-foreground">
@@ -179,6 +193,7 @@ export function SidebarNav() {
 														item.href
 													)}
 													isCollapsed={isCollapsed}
+													useNotice={item.useNotice} // Pass the memoized useNotice
 												/>
 											</TooltipTrigger>
 											{isCollapsed && (
@@ -195,7 +210,7 @@ export function SidebarNav() {
 							))}
 						</ul>
 
-						{index !== items.length - 1 && (
+						{index !== memoizedItems.length - 1 && (
 							<Separator className="my-2" />
 						)}
 					</div>
@@ -212,6 +227,8 @@ type NavLinkProps = NavItem & {
 	isCollapsed?: boolean;
 	size?: ButtonProps['size'];
 };
+
+import { memo } from 'react'; // Add this import at the top
 
 function NavLink({
 	href,
@@ -246,7 +263,7 @@ function NavLink({
 			{Notice && <Notice />}
 		</>
 	);
-	if (as == 'link') {
+	if (as === 'link') {
 		return (
 			<Link
 				to={href ?? ''}
@@ -269,3 +286,6 @@ function NavLink({
 		</a>
 	);
 }
+
+// Memoize NavLink to prevent unnecessary re-renders
+export default memo(NavLink);

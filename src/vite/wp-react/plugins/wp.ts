@@ -120,7 +120,10 @@ export default function WPEnvProcess({
 			slug: env.SLUG,
 			name: env.NAME,
 			textdomain: env.TEXTDOMAIN,
-			logo: { dark: env.LOGO_DARK??null, light: env.LOGO_LIGHT??null },
+			logo: {
+				dark: env.LOGO_DARK ?? null,
+				light: env.LOGO_LIGHT ?? null
+			},
 			whitelabel: parseInt(env.WHITELABEL) == 1
 		};
 		writeFileSync(

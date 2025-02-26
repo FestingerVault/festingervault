@@ -1,21 +1,66 @@
-type StackedBarChartProps = {
-	data: StackedBarChartDataType[];
-};
+import { useMemo } from 'react';
+
 export type StackedBarChartDataType = {
 	name: string;
 	label: string;
 	value: number;
 	color: string;
 };
+type StackedBarChartProps = {
+	data: StackedBarChartDataType[];
+};
 
+export type StackedBarChartWithPosition = StackedBarChartDataType & {
+	width: number;
+	x: number;
+};
+
+function calculateStackedBarPositions(
+	data: StackedBarChartDataType[],
+	width: number,
+	padding: number
+): StackedBarChartWithPosition[] {
+	const totalValue = data.reduce(
+		(sum, item) => sum + (item.value > 0 ? item.value : 0),
+		0
+	);
+	const totalGaps = (data.length - 1) * padding;
+	const availableWidth =
+		width -
+		totalGaps -
+		data.filter((item) => item.value === 0).length * padding;
+
+	let currentX = 0;
+
+	return data.map((item) => {
+		let width: number;
+
+		if (item.value === 0) {
+			width = padding;
+		} else {
+			width = Math.round((item.value / totalValue) * availableWidth);
+		}
+
+		const positionedItem = { ...item, width, x: currentX };
+
+		currentX += width + padding;
+
+		return positionedItem;
+	});
+}
+const width = 300;
+const height = 10;
+const rounded = 5;
+const padding = 5;
 export function StackedBarChart({ data }: StackedBarChartProps) {
-	const total = data.reduce((sum, item) => sum + item.value, 0);
-	const width = 300;
-	const height = 10;
-	const padding = 5;
+	const total = useMemo(
+		() => data.reduce((sum, item) => sum + item.value, 0),
+		[data]
+	);
 	if (total === 0) {
 		return null;
 	}
+	const calculated = calculateStackedBarPositions(data, width, padding);
 	return (
 		<div className="flex flex-col gap-4">
 			<svg
@@ -26,25 +71,14 @@ export function StackedBarChart({ data }: StackedBarChartProps) {
 				strokeWidth={2}
 				fill="none"
 			>
-				{data.map((item, index) => {
-					const barWidth = (item.value / total) * width - padding;
-					const x = data
-						.slice(0, index)
-						.reduce(
-							(sum, item) =>
-								sum +
-								((item.value / total) * width - padding / 2) +
-								padding,
-							0
-						);
-
+				{calculated.map((item) => {
 					return (
 						<rect
 							key={item.name}
-							x={x}
+							x={item.x}
 							y={0}
-							rx={4}
-							width={barWidth}
+							rx={rounded}
+							width={item.width}
 							height={height}
 							fill={item.color}
 							className="dura transition-all"

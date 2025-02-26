@@ -11,3 +11,6 @@
 /.env
 /languages
 /crowdin.yml
+
+# Million Lint
+.million

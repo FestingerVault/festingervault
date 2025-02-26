@@ -25,9 +25,9 @@ export type TActivationDetail = {
 	silver: boolean;
 	gold: boolean;
 	roles?: boolean;
-	download_allowed:boolean;
-	install_allowed:boolean;
-	bulk_download:boolean;
-	bulk_install:boolean;
-	autoupdate:boolean;
+	download_allowed: boolean;
+	install_allowed: boolean;
+	bulk_download: boolean;
+	bulk_install: boolean;
+	autoupdate: boolean;
 };
