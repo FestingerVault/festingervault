@@ -6,9 +6,7 @@ use FestingerVault\Constants;
 
 abstract class ApiBase
 {
-	public function __construct()
-	{
-	}
+	public function __construct() {}
 
 	final function register()
 	{
