@@ -1,6 +1,6 @@
 import { EnumAccessLevel, EnumItemSlug, EnumItemType } from '@/zod/item';
 import { z } from 'zod';
-import { CollectionResponse } from './api';
+import { CollectionResponse, CursorCollectionResponse } from './api';
 type TVirusTotal = {
 	filename: string;
 	hash: string;
@@ -14,6 +14,8 @@ export type TTerm<T extends string = string> = {
 	slug: T;
 	taxonomy: string;
 };
+export type TTermCollectionResponse = CursorCollectionResponse<TTerm>;
+
 export type TItemTypeEnum = z.infer<typeof EnumItemType>;
 export type TItemTypeSlugEnum = z.infer<typeof EnumItemSlug>;
 export type TItemAccessLevelEnum = z.infer<typeof EnumAccessLevel>;

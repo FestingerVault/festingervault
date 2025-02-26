@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
 	<link
 		href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:wght@100..900&display=swap"
 		rel="stylesheet" />
-		<?php wp_print_styles(); ?>
+		<?php wp_print_head_scripts(); ?>
 </head>
 
 <body class="overflow-x-hidden font-sans">

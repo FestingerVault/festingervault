@@ -2,7 +2,8 @@
 
 namespace FestingerVault\api;
 
-use FestingerVault\{Constants, Helper};
+use FestingerVault\Constants;
+use FestingerVault\Helper;
 
 class License extends ApiBase
 {
@@ -18,9 +19,9 @@ class License extends ApiBase
 		]);
 		if (!is_wp_error($result)) {
 			update_option(Constants::ACTIVATION_KEY, $result['activation_key']);
-			delete_transient(Constants::SLUG . '_roles_cache');
 			return ['message' => __('Activation Successful', 'festingervault')];
 		}
+		delete_transient(Constants::SLUG . '_roles_cache');
 		return $result;
 	}
 
@@ -40,6 +41,8 @@ class License extends ApiBase
 			}
 			return $result;
 		}
+		delete_transient(Constants::SLUG . '_roles_cache');
+
 		return new \WP_Error(
 			400,
 			__('Error deactivating license', 'festingervault')

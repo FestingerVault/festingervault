@@ -30,7 +30,6 @@ export const Grid = ({
 
 export function GridPattern({ width, height, x, y, squares, ...props }: any) {
 	const patternId = useId();
-
 	return (
 		<svg
 			aria-hidden="true"

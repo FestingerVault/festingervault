@@ -96,8 +96,6 @@ export default function WPEnvProcess({
 				'Text Domain': env.TEXTDOMAIN,
 				'Requires at Least': env.MIN_WP,
 				'Requires PHP': env.MIN_PHP,
-				'Requires Plugins': env.REQUIRES_PLUGINS,
-				License: env.LICENSE,
 				'License URI': env.LICENSE_URL
 			};
 			Object.entries(headers).forEach(([key, value]) => {
@@ -122,7 +120,10 @@ export default function WPEnvProcess({
 			slug: env.SLUG,
 			name: env.NAME,
 			textdomain: env.TEXTDOMAIN,
-			logo: { dark: env.LOGO_DARK, light: env.LOGO_LIGHT },
+			logo: {
+				dark: env.LOGO_DARK ?? null,
+				light: env.LOGO_LIGHT ?? null
+			},
 			whitelabel: parseInt(env.WHITELABEL) == 1
 		};
 		writeFileSync(

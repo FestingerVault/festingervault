@@ -43,6 +43,23 @@ class Helper
 		return $body;
 	}
 
+	public static function get_activation_detail()
+	{
+		$cache_key = Constants::SLUG . '_activation_details';
+		$license_detail = get_transient($cache_key);
+		if (!$license_detail) {
+			$license_detail = self::engine_post('license/activations');
+			if (!is_wp_error($license_detail)) {
+				set_transient(
+					$cache_key,
+					$license_detail,
+					30 * MINUTE_IN_SECONDS
+				);
+			}
+		}
+		return is_wp_error($license_detail) ? false : $license_detail;
+	}
+
 	/**
 	 * @return array|\WP_Error
 	 */
@@ -50,7 +67,6 @@ class Helper
 	{
 		$installed_themes = self::installed_themes();
 		$installed_plugins = self::installed_plugins();
-
 		$result = self::engine_post('update/list', [
 			'themes' => $installed_themes,
 			'plugins' => $installed_plugins,
@@ -59,92 +75,114 @@ class Helper
 			return new \WP_Error(400, 'Error Fetching Update List');
 		}
 		$data = [];
-		foreach ($result['data'] as $item) {
-			if ('theme' == $item['type']) {
-				foreach ($item['slugs'] as $slug) {
-					if (isset($installed_themes[$slug])) {
-						$item['installed_version'] =
-							$installed_themes[$slug]['version'];
-						$item['path'] = $installed_themes[$slug]['path'];
-						$item['slug'] = $slug;
-						$item['install_dir'] = self::wp_content_rel_path(
-							trailingslashit(
-								$installed_themes[$slug]['theme_root']
-							) . trim($installed_themes[$slug]['path'], '/')
-						);
+		if (isset($result['data'])) {
+			foreach ($result['data'] as $item) {
+				if ('theme' == $item['type']) {
+					foreach ($item['slugs'] as $slug) {
+						if (isset($installed_themes[$slug])) {
+							$item['installed_version'] =
+								$installed_themes[$slug]['version'];
+							$item['path'] = $installed_themes[$slug]['path'];
+							$item['slug'] = $slug;
+							$item['install_dir'] = self::wp_content_rel_path(
+								trailingslashit(
+									$installed_themes[$slug]['theme_root']
+								) . trim($installed_themes[$slug]['path'], '/')
+							);
 
-						$item['data'] = $installed_themes[$slug];
-						$data[] = $item;
+							$item['data'] = $installed_themes[$slug];
+							$data[] = $item;
+						}
+					}
+				}
+				if ('plugin' == $item['type']) {
+					foreach ($item['slugs'] as $slug) {
+						if (isset($installed_plugins[$slug])) {
+							$item['installed_version'] =
+								$installed_plugins[$slug]['version'];
+							$item['path'] = $installed_plugins[$slug]['path'];
+							$item['slug'] = $slug;
+							$item['install_dir'] = self::wp_content_rel_path(
+								\plugin_dir_path(
+									trailingslashit(WP_PLUGIN_DIR) .
+										trim(
+											$installed_plugins[$slug]['path'],
+											'/'
+										)
+								)
+							);
+							$data[] = $item;
+						}
 					}
 				}
 			}
-			if ('plugin' == $item['type']) {
-				foreach ($item['slugs'] as $slug) {
-					if (isset($installed_plugins[$slug])) {
-						$item['installed_version'] =
-							$installed_plugins[$slug]['version'];
-						$item['path'] = $installed_plugins[$slug]['path'];
-						$item['slug'] = $slug;
-						$item['install_dir'] = self::wp_content_rel_path(
-							\plugin_dir_path(
-								trailingslashit(WP_PLUGIN_DIR) .
-									trim($installed_plugins[$slug]['path'], '/')
-							)
-						);
-						$data[] = $item;
-					}
-				}
-			}
+			usort($data, function ($a, $b) {
+				return strcmp(strtolower($a['title']), strtolower($b['title']));
+			});
+			$updatable = array_filter($data, function ($item) {
+				return version_compare(
+					$item['version'],
+					$item['installed_version'],
+					'gt'
+				);
+			});
+			$data = array_filter($data, function ($item) {
+				return version_compare(
+					$item['version'],
+					$item['installed_version'],
+					'le'
+				);
+			});
+			$data = array_values(array_merge($updatable, $data));
 		}
-		usort($data, function ($a, $b) {
-			return strcmp(strtolower($a['title']), strtolower($b['title']));
-		});
-		$updatable = array_filter($data, function ($item) {
-			return version_compare(
-				$item['version'],
-				$item['installed_version'],
-				'gt'
-			);
-		});
-		$data = array_filter($data, function ($item) {
-			return version_compare(
-				$item['version'],
-				$item['installed_version'],
-				'le'
-			);
-		});
-		return ['data' => array_values(array_merge($updatable, $data))];
+
+		return ['data' => $data];
 	}
 
 	/**
+	 * Get user roles
+	 * @return array
+	 */
+	public static function get_roles()
+	{
+		global $wp_roles;
+
+		if (!isset($wp_roles)) {
+			$wp_roles = new \WP_Roles();
+		}
+
+		$roles = $wp_roles->roles;
+
+		$res = [];
+
+		foreach ($roles as $role_slug => $role_details) {
+			if ($role_slug === 'administrator') {
+				continue;
+			}
+			$res[$role_slug] = $role_details['name'];
+		}
+
+		return $res;
+	}
+
+	/**
+	 * Get only required site information
 	 * @return array
 	 */
 	public static function get_site_information()
 	{
-		/** @var \wpdb $wpdb WP Database */
-		global $wpdb;
 		$site_url = get_site_url();
-		$admin_email = get_option('admin_email');
-		$table_prefix = $wpdb->prefix;
-		$plugin_uuid = get_option('fv_uuid');
 		$info = Plugin::info();
-		if (!$plugin_uuid) {
-			$plugin_uuid = wp_generate_uuid4();
-			update_option('fv_uuid', $plugin_uuid);
-		}
+
 		$data = [
 			'site_url' => $site_url,
-			'admin_email' => $admin_email,
-			'table_prefix' => $table_prefix,
-			'uuid' => $plugin_uuid,
-			'wp_path' => \ABSPATH,
-			'wp_version' => get_bloginfo('version'),
-			'fv_version' => $info['Version'] ?? null,
+			'plugin_version' => $info['Version'] ?? null,
 		];
 		return $data;
 	}
 
 	/**
+	 * Get installed plugins list
 	 * @return array
 	 */
 	public static function installed_plugins()
@@ -167,6 +205,7 @@ class Helper
 	}
 
 	/**
+	 * Get installed themes list
 	 * @return array
 	 */
 	public static function installed_themes()
@@ -198,6 +237,42 @@ class Helper
 		return array_shift($parts);
 	}
 
+	public static function update_capabilities()
+	{
+		$capability = 'access_' . Constants::ADMIN_PAGE_ID;
+		$activation_detail = self::get_activation_detail();
+		$roles = [];
+		if (
+			$activation_detail !== false &&
+			!empty($activation_detail['roles'])
+		) {
+			$settings = get_option(
+				Constants::SETTING_KEY,
+				Constants::DEFAULT_SETTINGS
+			);
+			$enabled_roles =
+				isset($settings['roles']) && is_array($settings['roles'])
+					? $settings['roles']
+					: [];
+
+			foreach (self::get_roles() as $role => $label) {
+				$roles[$role] = in_array($role, $enabled_roles, true);
+			}
+		}
+		foreach ($roles as $role_name => $should_have_cap) {
+			$role = get_role($role_name);
+			if ($role) {
+				$has_cap = $role->has_cap($capability);
+
+				if ($should_have_cap && !$has_cap) {
+					$role->add_cap($capability, true);
+				} else {
+					$role->remove_cap($capability);
+				}
+			}
+		}
+	}
+
 	/**
 	 * @param $path
 	 */
@@ -208,30 +283,5 @@ class Helper
 			str_replace($wp_content_dir, '', \wp_normalize_path($path)),
 			'/'
 		);
-	}
-	public static function get_roles()
-	{
-		global $wp_roles;
-
-		// Check if wp_roles is set
-		if (!isset($wp_roles)) {
-			$wp_roles = new \WP_Roles();
-		}
-
-		// Get the roles as an array
-		$roles = $wp_roles->roles;
-
-		// Initialize an empty array for the key => label roles
-		$res = [];
-
-		// Loop through each role and build the key => label array
-		foreach ($roles as $role_slug => $role_details) {
-			if ($role_slug === 'administrator') {
-				continue;
-			}
-			$res[$role_slug] = $role_details['name'];
-		}
-
-		return $res;
 	}
 }

@@ -16,6 +16,7 @@ import ItemChangeLog from './_components/item-changelog';
 import ItemComments from './_components/item-comments';
 import ItemDemoContents from './_components/item-demo-contents';
 import ItemDescription from './_components/item-description';
+import ItemRequestUpdate from './_components/item-request-update';
 import ItemSidebar from './_components/item-sidebar';
 
 type TabRecordType = {
@@ -62,17 +63,23 @@ export default function Component() {
 					? data.additional_content_count > 0
 					: false
 			},
+
 			{
 				id: 'comments',
 				label: __('Comments'),
 				el: () => <ItemComments />,
 				enabled: data.topic_id ? data.topic_id > 0 : false
 			},
-
+			{
+				id: 'request-update',
+				label: __('Request Update'),
+				el: () => <ItemRequestUpdate item={data} />,
+				enabled: data.media_count ? data.media_count > 0 : false
+			},
 			{
 				id: 'support',
 				label: __('Support'),
-				//external: data.support_url ?? "", // TODO: add forum support to engine
+				external: data.support_url ?? '', // TODO: add forum support to engine
 				enabled: data.support_url
 					? data?.support_url?.length > 0
 					: false

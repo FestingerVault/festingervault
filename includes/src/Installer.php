@@ -15,11 +15,11 @@ class Installer
 	private $item_detail;
 
 	/**
-	 * WP_Upgrader
+	 * Installer
 	 *
 	 * @var \Theme_Upgrader|\Plugin_Upgrader
 	 */
-	private $wp_installer;
+	private $installer;
 	/**
 	 * @var string
 	 */
@@ -34,7 +34,7 @@ class Installer
 		require_once ABSPATH . 'wp-admin/includes/file.php';
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 		require_once ABSPATH . 'wp-admin/includes/misc.php';
-		if (!class_exists('Plugin_Upgrader', false)) {
+		if (!class_exists('\Plugin_Upgrader', false)) {
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 		}
 		$this->item_detail = $item_detail;
@@ -42,9 +42,9 @@ class Installer
 		$this->slug = $path;
 		$skin = new \WP_Ajax_Upgrader_Skin([]);
 		if ('theme' == $item_detail['type']) {
-			$this->wp_installer = new \Theme_Upgrader($skin);
+			$this->installer = new \Theme_Upgrader($skin);
 		} else {
-			$this->wp_installer = new \Plugin_Upgrader($skin);
+			$this->installer = new \Plugin_Upgrader($skin);
 		}
 	}
 
@@ -55,7 +55,7 @@ class Installer
 	function run()
 	{
 		$destination = false;
-		$slug = $this->item_detail['slug'][0]; // pick first slug for install destination
+		$slug = $this->item_detail['slugs'][0]; // pick first slug for install destination
 		if (!empty($this->slug)) {
 			$slug = $this->slug;
 		}
@@ -65,7 +65,7 @@ class Installer
 			$destination = trailingslashit(get_theme_root()) . $slug;
 		}
 		if (false !== $destination) {
-			$installed = $this->wp_installer->run([
+			$installed = $this->installer->run([
 				'package' => $this->download_detail['link'],
 				'destination' => $destination,
 				'abort_if_destination_exists' => false,
@@ -85,7 +85,7 @@ class Installer
 	/**
 	 * @param array $download_detail
 	 */
-	function set_download_detail($download_detail)
+	public function set_download_detail($download_detail)
 	{
 		$this->download_detail = $download_detail;
 	}
@@ -93,7 +93,7 @@ class Installer
 	/**
 	 * @param array $item_detail
 	 */
-	function set_item_detail($item_detail)
+	public function set_item_detail($item_detail)
 	{
 		$this->item_detail = $item_detail;
 	}

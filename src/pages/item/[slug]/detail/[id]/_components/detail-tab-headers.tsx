@@ -1,3 +1,4 @@
+import BulkButton from '@/components/bulk-button';
 import CollectionButton from '@/components/collection-button';
 import InstallButton from '@/components/install-button';
 import { Button } from '@/components/ui/button';
@@ -47,6 +48,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 							<Heart size={16} />
 						</Button>
 					</CollectionButton>
+					<BulkButton item={item} />
 					{/* <Button
 						size="icon"
 						variant="outline"

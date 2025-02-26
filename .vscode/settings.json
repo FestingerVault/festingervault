@@ -11,10 +11,6 @@
 	"[php]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"php-docblocker.author": {
-		"name": "Kevin Ramaut",
-		"email": "thelookthing@gmail.com"
-	},
 	"[javascriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},

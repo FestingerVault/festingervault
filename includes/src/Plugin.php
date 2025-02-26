@@ -21,16 +21,35 @@ class Plugin
 	 */
 	private static $instance = null;
 
+	function __clone()
+	{
+		// Prevent cloning of the instance
+	}
+
 	/**
 	 * @param $file
 	 */
 	public function __construct($file)
 	{
 		self::$file = $file;
+		register_activation_hook(self::$file, [$this, 'add_admin_capability']);
 		Admin::get_instance();
 		RestAPI::get_instance();
 		AutoUpdate::get_instance();
-		AccessRoles::get_instance();
+	}
+
+	function __wakeup()
+	{
+		// Prevent unserializing of the instance
+	}
+
+	public function add_admin_capability()
+	{
+		$capability = 'access_' . Constants::ADMIN_PAGE_ID;
+		$role = get_role('administrator');
+		if ($role && !$role->has_cap($capability)) {
+			$role->add_cap($capability, true);
+		}
 	}
 
 	/**
@@ -72,15 +91,5 @@ class Plugin
 	public static function p_url($path = '')
 	{
 		return plugins_url(trim($path, '/'), self::$file);
-	}
-
-	function __clone()
-	{
-		// Prevent cloning of the instance
-	}
-
-	function __wakeup()
-	{
-		// Prevent unserializing of the instance
 	}
 }

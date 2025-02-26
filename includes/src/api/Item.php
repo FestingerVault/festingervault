@@ -2,7 +2,8 @@
 
 namespace FestingerVault\api;
 
-use FestingerVault\{Helper, Installer};
+use FestingerVault\Helper;
+use FestingerVault\Installer;
 
 class Item extends ApiBase
 {
@@ -16,8 +17,10 @@ class Item extends ApiBase
 	public function terms(\WP_REST_Request $request)
 	{
 		$type = $request->get_param('type');
-		return Helper::engine_post('item/terms', [
+		$cursor = $request->get_param('cursor');
+		return Helper::engine_post('item/paginated-terms', [
 			'type' => $type,
+			'cursor' => $cursor,
 		]);
 	}
 
@@ -109,6 +112,9 @@ class Item extends ApiBase
 			'comments' => [
 				'callback' => [$this, 'get_comments'],
 			],
+			'request-update' => [
+				'callback' => [$this, 'request_update'],
+			],
 		];
 	}
 
@@ -144,6 +150,14 @@ class Item extends ApiBase
 			);
 		}
 		return ['success' => true];
+	}
+	public function request_update(\WP_REST_Request $request){
+		$item_id = $request->get_param('item_id');
+		$version = $request->get_param('version');
+		return Helper::engine_post('update/request', [
+			'item_id' => $item_id,
+			'version'=>$version
+		]);
 	}
 
 	public function items(\WP_REST_Request $request)

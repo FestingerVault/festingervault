@@ -34,67 +34,68 @@ export default function ItemDetail({ item }: Props) {
 				label: __('Author'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'item_author')
+						.filter((i) => i.taxonomy === 'fv_item_author')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'item_author')
+					item.terms.filter((i) => i.taxonomy === 'fv_item_author')
 						.length > 0
 			},
 			{
-				label: __('Columns'),
+				label: __('Documentation'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'columns')
+						.filter((i) => i.taxonomy === 'fv_documentation')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'columns').length >
-					0
+					item.terms.filter((i) => i.taxonomy === 'fv_documentation')
+						.length > 0
 			},
 			{
 				label: __('Gutenberg Optimized'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'gutenberg_optimized')
+						.filter((i) => i.taxonomy === 'fv_gutenberg_optimized')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
 					item.terms.filter(
-						(i) => i.taxonomy === 'gutenberg_optimized'
+						(i) => i.taxonomy === 'fv_gutenberg_optimized'
 					).length > 0
 			},
 			{
 				label: __('High Resolution'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'high_resolution')
+						.filter((i) => i.taxonomy === 'fv_high_resolution')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'high_resolution')
-						.length > 0
+					item.terms.filter(
+						(i) => i.taxonomy === 'fv_high_resolution'
+					).length > 0
 			},
 			{
 				label: __('Widget Ready'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'widget_ready')
+						.filter((i) => i.taxonomy === 'fv_widget_ready')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'widget_ready')
+					item.terms.filter((i) => i.taxonomy === 'fv_widget_ready')
 						.length > 0
 			},
 			{
 				label: __('Access'),
 				el: () =>
 					item.terms
-						.filter((i) => i.taxonomy === 'access_level')
+						.filter((i) => i.taxonomy === 'fv_access_level')
 						.map((i) => decodeEntities(i.name))
 						.join(', '),
 				enabled:
-					item.terms.filter((i) => i.taxonomy === 'access_level')
+					item.terms.filter((i) => i.taxonomy === 'fv_access_level')
 						.length > 0
 			}
 		],
@@ -112,12 +113,12 @@ export default function ItemDetail({ item }: Props) {
 						enabled !== false && (
 							<div
 								key={label}
-								className="grid grid-cols-3 gap-3 text-sm font-light"
+								className="flex flex-col gap-1 text-sm font-light"
 							>
-								<div className="col-span-1 text-muted-foreground">
+								<div className="text-muted-foreground">
 									{label}
 								</div>
-								<div className="col-span-2">
+								<div>
 									<Element />
 								</div>
 							</div>

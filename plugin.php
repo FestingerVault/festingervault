@@ -3,7 +3,7 @@
  * Plugin Name: FestingerVault
  * Plugin URI: https://festingervault.com
  * Description: Imagine going to the forest of themes, buying a theme, and logging out. Now, you come to Festinger's, where we offer 25K+ premium themes and plugins directly from your dashboard.
- * Version: 1.0.1738422789
+ * Version: 1.0.1740571297
  * Requires at Least: 6.0
  * Requires PHP: 7.4
  * Author: FestingerVault
@@ -11,7 +11,6 @@
  * License: GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: festingervault
- * Requires Plugins: action-scheduler
  **/
 namespace FestingerVault {
 	if (file_exists(__DIR__ . '/includes/lib/autoload.php')) {

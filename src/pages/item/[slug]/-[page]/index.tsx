@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import useApiFetch from '@/hooks/use-api-fetch';
 import useDataCollection, { FilterOption } from '@/hooks/use-data-collection';
+import useGetTerms from '@/hooks/use-get-terms';
 import { __ } from '@/lib/i18n';
 import { SlugToItemType } from '@/lib/type-to-slug';
 import { cn } from '@/lib/utils';
@@ -12,7 +13,7 @@ import PostGridItem, {
 	PostGridItemSkeleton
 } from '@/pages/item/[slug]/-[page]/_components/PostGridItem';
 import { useParams } from '@/router';
-import { TPostItem, TPostItemCollection } from '@/types/item';
+import { TPostItemCollection } from '@/types/item';
 import { EnumItemSlug } from '@/zod/item';
 import { useEffect, useMemo } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
@@ -73,28 +74,25 @@ export default function Component() {
 	const item_type = SlugToItemType(params.data.slug);
 	const type = item_type.type;
 	const page = params.data.page;
-	const { data: terms, isLoading: isCategoriesLoading } = useApiFetch<
-		TPostItem['terms']
-	>('item/terms', {
-		type
-	});
+	const { data: terms } = useGetTerms(type);
+
 	const filters = useMemo<FilterOption[]>(
 		() =>
 			terms
 				? [
 						{
-							id: 'product_cat',
+							id: 'category',
 							label: __('Category'),
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'product_cat'
+									(i) => i.taxonomy === 'fv_category'
 								).length > 0,
 							onBarView: true,
 							isMulti: true,
 							showAll: true,
 							options: terms
-								?.filter((i) => i.taxonomy === 'product_cat')
+								?.filter((i) => i.taxonomy === 'fv_category')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -102,14 +100,14 @@ export default function Component() {
 								}))
 						},
 						{
-							id: 'post_tag',
+							id: 'tag',
 							label: __('Tag'),
 							isMulti: true,
 							enabled:
-								terms?.filter((i) => i.taxonomy === 'post_tag')
+								terms?.filter((i) => i.taxonomy === 'fv_tag')
 									.length > 0,
 							options: terms
-								?.filter((i) => i.taxonomy === 'post_tag')
+								?.filter((i) => i.taxonomy === 'fv_tag')
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -122,11 +120,13 @@ export default function Component() {
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'widget_ready'
+									(i) => i.taxonomy === 'fv_widget_ready'
 								).length > 0,
 							isMulti: false,
 							options: terms
-								?.filter((i) => i.taxonomy === 'widget_ready')
+								?.filter(
+									(i) => i.taxonomy === 'fv_widget_ready'
+								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -139,11 +139,11 @@ export default function Component() {
 							isMulti: false,
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'compatible_with'
+									(i) => i.taxonomy === 'fv_compatible_with'
 								).length > 0,
 							options: terms
 								?.filter(
-									(i) => i.taxonomy === 'compatible_with'
+									(i) => i.taxonomy === 'fv_compatible_with'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -175,11 +175,13 @@ export default function Component() {
 							enabled:
 								item_type.slug != 'template-kit' &&
 								terms?.filter(
-									(i) => i.taxonomy === 'files_included'
+									(i) => i.taxonomy === 'fv_files_included'
 								).length > 0,
 							isMulti: false,
 							options: terms
-								?.filter((i) => i.taxonomy === 'files_included')
+								?.filter(
+									(i) => i.taxonomy === 'fv_files_included'
+								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -191,12 +193,12 @@ export default function Component() {
 							label: __('Software Versions'),
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'software_version'
+									(i) => i.taxonomy === 'fv_software_version'
 								).length > 0,
 							isMulti: false,
 							options: terms
 								?.filter(
-									(i) => i.taxonomy === 'software_version'
+									(i) => i.taxonomy === 'fv_software_version'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -211,10 +213,12 @@ export default function Component() {
 							onBarView: true,
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'access_level'
+									(i) => i.taxonomy === 'fv_access_level'
 								).length > 0,
 							options: terms
-								?.filter((i) => i.taxonomy === 'access_level')
+								?.filter(
+									(i) => i.taxonomy === 'fv_access_level'
+								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
 									label: decodeEntities(i.name),
@@ -250,14 +254,18 @@ export default function Component() {
 		data,
 		isLoading: isItemsLoading,
 		isFetching
-	} = useApiFetch<TPostItemCollection>('item/list', {
-		type,
-		page,
-		filter: dataCollection.filter,
-		sort: dataCollection.sorting,
-		keyword: dataCollection.search?.keyword,
-		per_page: Number(dataCollection.pagination?.per_page)
-	});
+	} = useApiFetch<TPostItemCollection>(
+		'item/list',
+		{
+			type,
+			page,
+			filter: dataCollection.filter,
+			sort: dataCollection.sorting,
+			keyword: dataCollection.search?.keyword,
+			per_page: Number(dataCollection.pagination?.per_page)
+		},
+		!!terms
+	);
 	useEffect(() => {
 		window.scrollTo({
 			top: 0,
@@ -269,7 +277,7 @@ export default function Component() {
 			title={item_type?.label}
 			description={item_type?.description}
 			isFetching={isFetching}
-			isLoading={isItemsLoading || isCategoriesLoading}
+			isLoading={isItemsLoading || !!terms === false}
 			preloader={
 				<div className="grid grid-cols-1 md:grid-cols-3">
 					<PostGridItemSkeleton />
