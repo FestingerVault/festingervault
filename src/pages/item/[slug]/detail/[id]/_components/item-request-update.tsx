@@ -15,7 +15,6 @@ import {
 import { Input } from '@/components/ui/input';
 import useApiMutation from '@/hooks/use-api-mutation';
 import { __ } from '@/lib/i18n';
-import { useParams } from '@/router';
 import { TPostItem } from '@/types/item';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader } from 'lucide-react';
@@ -34,7 +33,6 @@ export const updateRequestSchema = z.object({
 });
 type TUpdateRequest = z.infer<typeof updateRequestSchema>;
 export default function ItemRequestUpdate({ item }: Props) {
-	const params = useParams('/item/:slug/detail/:id/:tab?');
 	const form = useForm<TUpdateRequest>({
 		resolver: zodResolver(updateRequestSchema),
 		defaultValues: {

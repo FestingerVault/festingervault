@@ -1,10 +1,9 @@
-name: BETA
+name: BETA 5.0.0-beta.3.1.x
 on:
     push:
         branches:
             - beta
 env:
-    TRUNK_BRANCH: beta-trunk
     RELEASE_BRANCH: beta-release
     ENV_FILE: .env.beta
     CROWDIN_YML: crowdin.github.yml
@@ -28,8 +27,8 @@ jobs:
               id: npm-cache
               with:
                   path: ${{ steps.npm-cache-dir.outputs.dir }}
-                  key: ${{ runner.os }}-node-beta-${{hashFiles('**/package-lock.json')}}
-                  restore-keys: ${{ runner.os }}-node-beta-
+                  key: ${{ runner.os }}-node-${{env.RELEASE_BRANCH}}-${{hashFiles('**/package-lock.json')}}
+                  restore-keys: ${{ runner.os }}-node-${{env.RELEASE_BRANCH}}-
             - name: Install NPM Dependencies
               run: npm install && npm run namespace
             - name: Install Composer dependencies
@@ -55,13 +54,6 @@ jobs:
               run: npm run make-json
             - name: Build Plugin File
               run: npm run dist
-            # - name: Release Trunk
-            #   uses: s0/git-publish-subdir-action@develop
-            #   env:
-            #       REPO: self
-            #       BRANCH: ${{env.TRUNK_BRANCH}}
-            #       FOLDER: deploy
-            #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Release ZIP
               uses: s0/git-publish-subdir-action@develop
               env:
