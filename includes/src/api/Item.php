@@ -151,12 +151,13 @@ class Item extends ApiBase
 		}
 		return ['success' => true];
 	}
-	public function request_update(\WP_REST_Request $request){
+	public function request_update(\WP_REST_Request $request)
+	{
 		$item_id = $request->get_param('item_id');
 		$version = $request->get_param('version');
 		return Helper::engine_post('update/request', [
 			'item_id' => $item_id,
-			'version'=>$version
+			'version' => $version,
 		]);
 	}
 
