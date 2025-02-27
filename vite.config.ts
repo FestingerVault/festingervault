@@ -2,7 +2,6 @@ import generouted from '@generouted/react-router/plugin';
 import Crypto from 'crypto';
 import path from 'path';
 import { defineConfig } from 'vite';
-import { ViteMinifyPlugin } from 'vite-plugin-minify';
 import viteWpReact from './src/vite/wp-react';
 
 function randomString(size = 6) {
@@ -44,6 +43,5 @@ export default defineConfig({
 				'TEXTDOMAIN'
 			]
 		}),
-		ViteMinifyPlugin()
 	]
 });

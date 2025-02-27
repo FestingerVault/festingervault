@@ -60,6 +60,9 @@ export function devServer(options: Options = {}): Plugin {
 						port,
 						host,
 						protocol: hmrProtocol
+					},
+					cors:{
+						origin:"*"
 					}
 				}
 			};
