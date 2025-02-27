@@ -105,13 +105,13 @@ export default function Component() {
 			{data && (
 				<>
 					<ItemDetailHeader item={data} />
-					<div className="wp-full">
+					<div className="w-full">
 						<DetailTabHeaders
 							item={data}
 							tabs={tabs}
 						/>
 					</div>
-					<div className="flex flex-col  gap-5 sm:flex-row sm:gap-7">
+					<div className="w-full flex flex-col gap-5 sm:flex-row sm:gap-7">
 						<div className="sm:flex-1">
 							<DetailTabContent
 								item={data}

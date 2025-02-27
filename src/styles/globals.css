@@ -140,11 +140,14 @@
   }
 }
 .item-description{
-	@apply space-y-4;
+	@apply space-y-4 whitespace-pre-wrap;
 	h2{
 		@apply text-xl;
 	}
 	h3{
 		@apply text-lg;
+	}
+	pre{
+		@apply whitespace-pre-wrap;
 	}
 }

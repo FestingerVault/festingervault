@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
 		<?php wp_print_head_scripts(); ?>
 </head>
 
-<body class="overflow-x-hidden font-sans">
+<body class="font-sans">
 	<div id="app"></div>
 	<?php wp_print_footer_scripts(); ?>
 </body>

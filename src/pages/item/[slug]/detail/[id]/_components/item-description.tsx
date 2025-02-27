@@ -14,7 +14,7 @@ export default function ItemDescription({ item }: Props) {
 				<CardHeader className="border-b p-5 sm:p-7">
 					{__('Description')}
 				</CardHeader>
-				<CardContent className="item-description p-5 text-sm leading-relaxed sm:p-7">
+				<CardContent className="item-description p-5 text-sm leading-relaxed sm:p-7 break-words">
 					{renderHtml(item.summary ?? '')}
 				</CardContent>
 			</Card>
