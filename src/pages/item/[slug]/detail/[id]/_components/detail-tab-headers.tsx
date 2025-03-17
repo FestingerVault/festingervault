@@ -20,7 +20,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 		tabs.find((tab) => tab.id === params.tab)?.id ?? 'description';
 	return (
 		<div className="flex flex-col justify-between border-b-2 border-b-card sm:flex-row-reverse sm:items-center">
-			<div className="flex flex-row justify-between gap-4">
+			<div className="flex flex-col lg:flex-row lg:justify-between gap-4">
 				<div className="flex flex-col gap-4 sm:flex-row">
 					<InstallButton item={item} />
 					<Button
@@ -58,7 +58,7 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 				</div>
 			</div>
 			<div className="flex flex-row">
-				{tabs.map(({ id, label, external }) => (
+				{tabs.map(({ id, label, external, icon:Icon }) => (
 					<Slot
 						key={id}
 						className={cn(
@@ -82,8 +82,9 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 									tab: id
 								}}
 							>
-								{label}
-							</Link>
+								<span className='hidden lg:block'>{label}</span>
+								<span className='lg:hidden'><Icon /></span>
+								</Link>
 						)}
 					</Slot>
 				))}

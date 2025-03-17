@@ -91,7 +91,7 @@ export default function LicenseStatus({ className }: Props) {
 						</div>
 					</div>
 				</div>
-				<div className="flex flex-col items-center gap-12 lg:flex-row">
+				<div className="lg:flex lg:flex-row lg:items-center lg:gap-12">
 					<div className="flex flex-1 flex-col gap-2">
 						<div className="space-x-1">
 							<span className="text-muted-foreground">

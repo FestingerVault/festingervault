@@ -70,6 +70,62 @@ class Admin
 			'dashicons-smiley',
 			1
 		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Dashboard', 'festingervault'),
+			__('Dashboard', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Themes', 'festingervault'),
+			__('Themes', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/item/theme',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Plugins', 'festingervault'),
+			__('Plugins', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/item/plugin',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Template Kits', 'festingervault'),
+			__('Template Kits', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/item/template-kit',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Updates', 'festingervault'),
+			__('Updates', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/updates',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('License', 'festingervault'),
+			__('License', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/activation',
+			[$this, 'render_page']
+		);
+		\add_submenu_page(
+			Constants::ADMIN_PAGE_ID,
+			__('Settings', 'festingervault'),
+			__('Settings', 'festingervault'),
+			'access_' . Constants::ADMIN_PAGE_ID,
+			Constants::ADMIN_PAGE_ID . '#/settings',
+			[$this, 'render_page']
+		);
 	}
 
 	public function enqueue_scripts()

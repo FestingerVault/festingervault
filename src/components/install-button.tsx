@@ -155,7 +155,7 @@ export default function InstallButton({ item, media, size, variant }: Props) {
 											__(
 												'%d download credit would be consumed from your account.'
 											),
-											1
+											item.owned ? 0 : 1
 										)}
 									</div>
 									<div className="flex flex-row items-center justify-center divide-x whitespace-nowrap">

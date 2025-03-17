@@ -61,7 +61,13 @@ export function SidebarNav() {
 			disableHoverableContent
 			delayDuration={0}
 		>
-			<nav>
+			<nav className="flex flex-col gap-4">
+				<div className="flex flex-row gap-2 lg:hidden">
+					<ModeToggle />
+					<BulkAction />
+					<DownloadManager />
+					<LanguageSelector />
+				</div>
 				{memoizedItems.map((nav, index) => (
 					<div key={nav.id}>
 						{nav.showLabel && (
@@ -229,6 +235,10 @@ type NavLinkProps = NavItem & {
 };
 
 import { memo } from 'react'; // Add this import at the top
+import BulkAction from '../bulk-action';
+import DownloadManager from '../download-manager';
+import LanguageSelector from '../language-select';
+import ModeToggle from '../mode-toggle';
 
 function NavLink({
 	href,

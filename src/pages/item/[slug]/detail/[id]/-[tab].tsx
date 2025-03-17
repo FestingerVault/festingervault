@@ -7,6 +7,14 @@ import { TPostItem } from '@/types/item';
 import { useMemo } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { sprintf } from '@wordpress/i18n';
+import {
+	HelpingHand,
+	History,
+	MessageSquare,
+	MessageSquareDiff,
+	Package,
+	Text
+} from 'lucide-react';
 import ItemDetailHeader, {
 	ItemDetailHeaderSkeleton
 } from './_components/detail-header';
@@ -18,10 +26,12 @@ import ItemDemoContents from './_components/item-demo-contents';
 import ItemDescription from './_components/item-description';
 import ItemRequestUpdate from './_components/item-request-update';
 import ItemSidebar from './_components/item-sidebar';
+type IconProps = React.HTMLAttributes<SVGElement>;
 
 type TabRecordType = {
 	id: string;
 	label: string;
+	icon: React.ComponentType<IconProps>;
 	el?: React.ComponentType;
 	enabled?: boolean | undefined;
 	external?: string;
@@ -44,11 +54,13 @@ export default function Component() {
 			{
 				id: 'description',
 				label: __('Description'),
+				icon: Text,
 				el: () => <ItemDescription item={data} />
 			},
 			{
 				id: 'changelog',
 				label: __('Changelog'),
+				icon: History,
 				el: () => <ItemChangeLog item={data} />,
 				enabled: data.media_count ? data.media_count > 0 : false
 			},
@@ -58,6 +70,7 @@ export default function Component() {
 					__('Demo Contents [%d]'),
 					data.additional_content_count
 				),
+				icon: Package,
 				el: () => <ItemDemoContents item={data} />,
 				enabled: data.additional_content_count
 					? data.additional_content_count > 0
@@ -67,18 +80,21 @@ export default function Component() {
 			{
 				id: 'comments',
 				label: __('Comments'),
+				icon: MessageSquare,
 				el: () => <ItemComments />,
 				enabled: data.topic_id ? data.topic_id > 0 : false
 			},
 			{
 				id: 'request-update',
 				label: __('Request Update'),
+				icon: MessageSquareDiff,
 				el: () => <ItemRequestUpdate item={data} />,
 				enabled: data.media_count ? data.media_count > 0 : false
 			},
 			{
 				id: 'support',
 				label: __('Support'),
+				icon: HelpingHand,
 				external: data.support_url ?? '', // TODO: add forum support to engine
 				enabled: data.support_url
 					? data?.support_url?.length > 0

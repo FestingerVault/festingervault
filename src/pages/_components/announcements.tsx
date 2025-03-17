@@ -33,7 +33,7 @@ export default function Announcements({ className }: Props) {
 						{announcements?.map((item) => (
 							<div
 								key={item.id}
-								className="flex flex-row justify-between gap-2 py-4 text-sm first:pt-0 last:pb-0"
+								className="flex flex-col lg:flex-row justify-between gap-2 py-4 text-sm first:pt-0 last:pb-0"
 							>
 								<div>
 									<a

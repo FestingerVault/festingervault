@@ -143,7 +143,7 @@ function PageHeader({ title, description }: PageHeaderProps) {
 	}, [title]);
 	return (
 		<header className="flex flex-col items-start gap-4 border-b border-border py-6  sm:flex-row-reverse">
-			<div className="flex flex-row gap-2">
+			<div className="hidden lg:flex lg:flex-row lg:gap-2">
 				<ModeToggle />
 				<BulkAction />
 				<DownloadManager />
