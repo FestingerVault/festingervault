@@ -116,13 +116,15 @@ export default function AutoupdateSetting() {
 									</div>
 									<span>:</span>
 									<div>
-										<Select onValueChange={(val) =>
+										<Select
+											onValueChange={(val) =>
 												setSetting(
 													'autoupdate_minute',
 													val
 												)
 											}
-											defaultValue={settings.autoupdate_minute.toString()}>
+											defaultValue={settings.autoupdate_minute.toString()}
+										>
 											<SelectTrigger className="w-[80px]">
 												<SelectValue placeholder="00" />
 											</SelectTrigger>

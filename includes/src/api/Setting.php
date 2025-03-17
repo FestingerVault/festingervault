@@ -49,7 +49,8 @@ class Setting extends ApiBase
 							$request,
 							$key
 						) {
-							return is_numeric($param) && $param>=0 & $param<=23;
+							return is_numeric($param) &&
+								($param >= 0) & ($param <= 23);
 						},
 					],
 					'autoupdate_minute' => [
@@ -59,7 +60,8 @@ class Setting extends ApiBase
 							$request,
 							$key
 						) {
-							return is_numeric($param) && $param>=0 & $param<=59;
+							return is_numeric($param) &&
+								($param >= 0) & ($param <= 59);
 						},
 					],
 					'clean_on_uninstall' => [
@@ -96,7 +98,14 @@ class Setting extends ApiBase
 	}
 	public function update_setting(\WP_REST_Request $request)
 	{
-		$keys = ['autoactivate',"autoupdate_day_of_week","autoupdate_hour", "autoupdate_minute", 'clean_on_uninstall', 'roles'];
+		$keys = [
+			'autoactivate',
+			'autoupdate_day_of_week',
+			'autoupdate_hour',
+			'autoupdate_minute',
+			'clean_on_uninstall',
+			'roles',
+		];
 		$setting = [];
 		foreach ($keys as $key) {
 			$setting[$key] = $request->get_param($key);

@@ -20,7 +20,7 @@ export default function SettingsForm() {
 					<CardHeader className="border-b">
 						{__('General')}
 					</CardHeader>
-					<CardContent className='flex flex-col gap-4'>
+					<CardContent className="flex flex-col gap-4">
 						<div className="flex flex-col gap-7 sm:gap-2">
 							<SettingControl
 								label={__('Auto Activate')}

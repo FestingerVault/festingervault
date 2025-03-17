@@ -38,7 +38,7 @@ class Admin
 	 */
 	public function admin_enqueue_scripts($screen)
 	{
-		$css = [];
+		$css = $js = [];
 		$css[] =
 			'li#toplevel_page_' .
 			Constants::ADMIN_PAGE_ID .
@@ -53,7 +53,23 @@ class Admin
 			'li#toplevel_page_' .
 			Constants::ADMIN_PAGE_ID .
 			'.menu-top:hover{ background: rgb(230,13,145);background: linear-gradient(90deg, rgba(230,13,145,1) 0%, rgba(230,13,82,1) 10%)}';
+		$css[] =
+			'li#toplevel_page_' .
+			Constants::ADMIN_PAGE_ID .
+			'.menu-top:hover{ background: rgb(230,13,145);background: linear-gradient(90deg, rgba(230,13,145,1) 0%, rgba(230,13,82,1) 10%)}';
 		wp_add_inline_style('nav-menus', implode('', $css));
+		$js[] = "jQuery(function($){";
+		$js[] =
+			'$("li#toplevel_page_' .
+			Constants::ADMIN_PAGE_ID .
+			'").addClass("wp-has-current-submenu wp-menu-open").removeClass("wp-not-current-submenu");';
+		$js[] =
+			'$("li#toplevel_page_' .
+			Constants::ADMIN_PAGE_ID .
+			' li.wp-first-item").remove();';
+
+		$js[] = '});';
+		\wp_add_inline_script('jquery', implode('', $js));
 	}
 
 	public function admin_init()
@@ -86,7 +102,7 @@ class Admin
 			Constants::ADMIN_PAGE_ID,
 			[$this, 'render_page'],
 			'dashicons-smiley',
-			1
+			80
 		);
 		\add_submenu_page(
 			Constants::ADMIN_PAGE_ID,
