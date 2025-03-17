@@ -14,6 +14,16 @@ import useApiMutation from './use-api-mutation';
 export const settingSchema = z.object({
 	autoactivate: z.boolean().default(false),
 	clean_on_uninstall: z.boolean().default(false),
+	autoupdate_day_of_week: z
+		.array(z.number().min(0).max(6))
+		.min(0)
+		.max(7)
+		.refine((array) => new Set(array).size === array.length, {
+			message: 'Days cannot repeat'
+		})
+		.optional(),
+	autoupdate_hour: z.coerce.number().min(0).max(23).default(0),
+	autoupdate_minute: z.coerce.number().min(0).max(59).default(0),
 	roles: z.array(z.string()).default([])
 });
 type SettingProviderProps = {

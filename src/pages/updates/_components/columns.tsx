@@ -56,7 +56,7 @@ export const columns: ColumnDef<TThemePluginItem>[] = [
 						/>
 					</div>
 					<div className=" flex-1 space-y-1">
-					<div className="font-semibold">
+						<div className="font-semibold">
 							<div className="line-clamp-1">
 								<Link
 									to={`/item/:slug/detail/:id/:tab?`}
@@ -71,7 +71,10 @@ export const columns: ColumnDef<TThemePluginItem>[] = [
 						</div>
 						<div className="text-muted-foreground">
 							<div className="line-clamp-1">
-								{sprintf(__("Forked From: %s"),decodeEntities(row.original.original_title))}
+								{sprintf(
+									__('Forked From: %s'),
+									decodeEntities(row.original.original_title)
+								)}
 							</div>
 						</div>
 						<div className="text-muted-foreground">

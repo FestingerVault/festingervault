@@ -6,5 +6,6 @@
     "dark": "https://raw.githubusercontent.com/FestingerVault/assets/refs/heads/main/logo-dark.png",
     "light": "https://raw.githubusercontent.com/FestingerVault/assets/refs/heads/main/logo-light.png"
   },
-  "whitelabel": false
+  "whitelabel": false,
+  "provider": "https://festingervault.com"
 }

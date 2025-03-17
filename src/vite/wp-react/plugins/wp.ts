@@ -124,7 +124,8 @@ export default function WPEnvProcess({
 				dark: env.LOGO_DARK ?? null,
 				light: env.LOGO_LIGHT ?? null
 			},
-			whitelabel: parseInt(env.WHITELABEL) == 1
+			whitelabel: parseInt(env.WHITELABEL) == 1,
+			provider:parseInt(env.WHITELABEL) != 1?env.MAIN_SITE:false
 		};
 		writeFileSync(
 			'./src/settings.json',

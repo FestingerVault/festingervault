@@ -45,15 +45,28 @@ class AutoUpdate
 		) {
 			return null;
 		}
-
-		$settings = get_option(Constants::AUTOUPDATE_SETTING_KEY);
+		$settings = get_option(
+			Constants::SETTING_KEY,
+			Constants::DEFAULT_SETTINGS
+		);
+		if (!isset($settings['autoupdate_day_of_week'])) {
+			$days = [0, 1, 2, 3, 4, 5, 6, 7];
+		} else {
+			$days = $settings['autoupdate_day_of_week'];
+		}
+		$today_day = date('w');
+		if (!in_array($today_day, $days, false)) {
+			// no autoupdate enabled for today, so skip
+			return null;
+		}
+		$enabled_items = get_option(Constants::AUTOUPDATE_SETTING_KEY);
 		$engine_data = Helper::get_item_updates();
 		if (!is_wp_error($engine_data)) {
 			foreach ($engine_data['data'] as $item) {
 				if (
-					isset($settings[$item['type']]) &&
-					is_array($settings[$item['type']]) &&
-					in_array($item['slug'], $settings[$item['type']])
+					isset($enabled_items[$item['type']]) &&
+					is_array($enabled_items[$item['type']]) &&
+					in_array($item['slug'], $enabled_items[$item['type']])
 				) {
 					if (
 						version_compare(
@@ -129,9 +142,37 @@ class AutoUpdate
 	public function schedule_action()
 	{
 		if (false === wp_next_scheduled(Constants::SLUG . '/autoupdate')) {
+			$settings = get_option(
+				Constants::SETTING_KEY,
+				Constants::DEFAULT_SETTINGS
+			);
+			if (
+				!isset($settings['autoupdate_hour']) ||
+				$settings['autoupdate_hour'] > 23 ||
+				$settings['autoupdate_hour'] < 0
+			) {
+				$hour = 0;
+			} else {
+				$hour = $settings['autoupdate_hour'];
+			}
+			if (
+				!isset($settings['autoupdate_minute']) ||
+				$settings['autoupdate_minute'] > 59 ||
+				$settings['autoupdate_minute'] < 0
+			) {
+				$minute = 0;
+			} else {
+				$minute = $settings['autoupdate_minute'];
+			}
+			$timestamp =
+				'tomorrow ' .
+				\str_pad($hour, 2, '0') .
+				':' .
+				\str_pad($minute, 2, '0') .
+				':00';
 			wp_schedule_event(
-				strtotime('+1 hour'),
-				'hourly',
+				strtotime($timestamp),
+				'daily',
 				Constants::SLUG . '/autoupdate'
 			);
 		}

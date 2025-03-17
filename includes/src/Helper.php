@@ -237,6 +237,11 @@ class Helper
 		return array_shift($parts);
 	}
 
+	public static function cancel_autoupdate()
+	{
+		wp_clear_scheduled_hook(Constants::SLUG . '/autoupdate');
+	}
+
 	public static function update_capabilities()
 	{
 		$capability = 'access_' . Constants::ADMIN_PAGE_ID;

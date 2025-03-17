@@ -2,6 +2,7 @@ import BulkButton from '@/components/bulk-button';
 import CollectionButton from '@/components/collection-button';
 import InstallButton from '@/components/install-button';
 import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/config/site';
 import { __ } from '@/lib/i18n';
 import { cn } from '@/lib/utils';
 import { Link, useParams } from '@/router';
@@ -32,12 +33,29 @@ export default function DetailTabHeaders({ item, tabs }: Props) {
 						<a
 							href={item.preview ?? item.product_url}
 							target="_blank"
-							rel="noreferrer"
+							rel="noreferrer noopener"
 						>
-							<span>{__('Live Preview')}</span>
+							<span>{__('Preview')}</span>
 							<ExternalLink size={16} />
 						</a>
 					</Button>
+					{siteConfig.provider && (
+						<Button
+							asChild
+							className="flex gap-2"
+							variant="outline"
+							size="default"
+						>
+							<a
+								href={`${siteConfig.provider}?p=${item.id}`}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<span>{__('Product Page')}</span>
+								<ExternalLink size={16} />
+							</a>
+						</Button>
+					)}
 				</div>
 				<div className="flex gap-4">
 					<CollectionButton item={item}>
