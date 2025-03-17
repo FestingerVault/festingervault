@@ -24,6 +24,10 @@ import { z } from 'zod';
 
 const sort_items: ReturnType<typeof useDataCollection>['sort'] = [
 	{
+		label: __('Added'),
+		value: 'added'
+	},
+	{
 		label: __('Updated'),
 		value: 'updated'
 	},
@@ -84,7 +88,6 @@ export default function Component() {
 							id: 'category',
 							label: __('Category'),
 							enabled:
-								item_type.slug != 'template-kit' &&
 								terms?.filter(
 									(i) => i.taxonomy === 'fv_category'
 								).length > 0,
@@ -114,25 +117,7 @@ export default function Component() {
 									value: i.slug
 								}))
 						},
-						{
-							id: 'widget_ready',
-							label: __('Widget Ready'),
-							enabled:
-								item_type.slug != 'template-kit' &&
-								terms?.filter(
-									(i) => i.taxonomy === 'fv_widget_ready'
-								).length > 0,
-							isMulti: false,
-							options: terms
-								?.filter(
-									(i) => i.taxonomy === 'fv_widget_ready'
-								)
-								.sort((a, b) => a.slug.localeCompare(b.slug))
-								.map((i) => ({
-									label: decodeEntities(i.name),
-									value: i.slug
-								}))
-						},
+
 						{
 							id: 'compatible_with',
 							label: __('Compatible With'),
@@ -157,11 +142,31 @@ export default function Component() {
 							isMulti: false,
 							enabled:
 								terms?.filter(
-									(i) => i.taxonomy === 'compatible_browsers'
+									(i) =>
+										i.taxonomy === 'fv_compatible_browsers'
 								).length > 0,
 							options: terms
 								?.filter(
-									(i) => i.taxonomy === 'compatible_browsers'
+									(i) =>
+										i.taxonomy === 'fv_compatible_browsers'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'documentation',
+							label: __('Documentation'),
+							isMulti: false,
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'fv_documentation'
+								).length > 0,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'fv_documentation'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -173,7 +178,6 @@ export default function Component() {
 							id: 'files_included',
 							label: __('Files Included'),
 							enabled:
-								item_type.slug != 'template-kit' &&
 								terms?.filter(
 									(i) => i.taxonomy === 'fv_files_included'
 								).length > 0,
@@ -181,6 +185,62 @@ export default function Component() {
 							options: terms
 								?.filter(
 									(i) => i.taxonomy === 'fv_files_included'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'gutenberg_optimized',
+							label: __('Gutenberg Optimized'),
+							enabled:
+								terms?.filter(
+									(i) =>
+										i.taxonomy === 'fv_gutenberg_optimized'
+								).length > 0,
+							isMulti: false,
+							options: terms
+								?.filter(
+									(i) =>
+										i.taxonomy === 'fv_gutenberg_optimized'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'high_resolution',
+							label: __('High Resolution'),
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'fv_high_resolution'
+								).length > 0,
+							isMulti: false,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'fv_high_resolution'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'product_status',
+							label: __('Product Status'),
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'fv_product_status'
+								).length > 0,
+							isMulti: false,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'fv_product_status'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
@@ -207,6 +267,42 @@ export default function Component() {
 								}))
 						},
 						{
+							id: 'update_status',
+							label: __('Update Status'),
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'fv_update_status'
+								).length > 0,
+							isMulti: false,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'fv_update_status'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'widget_ready',
+							label: __('Widget Ready'),
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'fv_widget_ready'
+								).length > 0,
+							isMulti: false,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'fv_widget_ready'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
 							id: 'access_level',
 							label: __('Access'),
 							isMulti: true,
@@ -218,6 +314,24 @@ export default function Component() {
 							options: terms
 								?.filter(
 									(i) => i.taxonomy === 'fv_access_level'
+								)
+								.sort((a, b) => a.slug.localeCompare(b.slug))
+								.map((i) => ({
+									label: decodeEntities(i.name),
+									value: i.slug
+								}))
+						},
+						{
+							id: 'original_author',
+							label: __('Access'),
+							isMulti: true,
+							enabled:
+								terms?.filter(
+									(i) => i.taxonomy === 'original_author_tax'
+								).length > 0,
+							options: terms
+								?.filter(
+									(i) => i.taxonomy === 'original_author_tax'
 								)
 								.sort((a, b) => a.slug.localeCompare(b.slug))
 								.map((i) => ({
