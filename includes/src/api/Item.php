@@ -2,8 +2,11 @@
 
 namespace FestingerVault\api;
 
-use FestingerVault\Helper;
-use FestingerVault\Installer;
+use FestingerVault\{
+	Constants,
+	Helper,
+	Installer
+};
 
 class Item extends ApiBase
 {
@@ -143,11 +146,42 @@ class Item extends ApiBase
 		}
 		$installer = new Installer($item_detail, $download_detail, $slug);
 		$status = $installer->run();
+
 		if (is_wp_error($status)) {
 			return new \WP_Error(
 				400,
 				__('Error running item installation/update', 'festingervault')
 			);
+		}
+		$settings = get_option(
+			Constants::SETTING_KEY,
+			Constants::DEFAULT_SETTINGS
+		);
+		if (
+			$item_detail['type'] === 'plugin' &&
+			isset($settings['autoactivate']) &&
+			$settings['autoactivate']
+		) {
+			try {
+				$installed_items = Helper::get_item_updates();
+				if (
+					!is_wp_error($installed_items) &&
+					isset($installed_items['data'])
+				) {
+					$matched = \array_filter(
+						$installed_items['data'],
+						function ($_item) use ($item_id) {
+							return $_item['id'] == $item_id;
+						}
+					);
+					if (!empty($matched)) {
+						$item = array_shift($matched);
+						\activate_plugin($item['path']);
+					}
+				}
+			} catch (\Exception $e) {
+				error_log($e->getMessage());
+			}
 		}
 		return ['success' => true];
 	}
