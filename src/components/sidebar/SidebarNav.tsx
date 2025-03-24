@@ -66,7 +66,6 @@ export function SidebarNav() {
 					<ModeToggle />
 					<BulkAction />
 					<DownloadManager />
-					<LanguageSelector />
 				</div>
 				{memoizedItems.map((nav, index) => (
 					<div key={nav.id}>
@@ -237,7 +236,6 @@ type NavLinkProps = NavItem & {
 import { memo } from 'react'; // Add this import at the top
 import BulkAction from '../bulk-action';
 import DownloadManager from '../download-manager';
-import LanguageSelector from '../language-select';
 import ModeToggle from '../mode-toggle';
 
 function NavLink({

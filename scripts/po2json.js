@@ -6,6 +6,7 @@ import po2json from "po2json";
 config();
 const patterns = ["languages/**/*.po"];
 const files = sync(patterns, { nocase: true, nodir: true });
+const languages=[];
 files.forEach(file => {
   const jsonData = po2json.parseFileSync(file, {
     fuzzy: false,
@@ -20,4 +21,20 @@ files.forEach(file => {
     ),
     JSON.stringify(jsonData),
   );
+  // fs.writeFileSync(
+  //   path.join(
+  //     "languages",
+  //     `${jsonData.locale_data[process.env.TEXTDOMAIN][""].lang}.json`,
+  //   ),
+  //   JSON.stringify(jsonData),
+  // );
+	languages.push(jsonData.locale_data[process.env.TEXTDOMAIN][""].lang.replace("_","-"));
+
 });
+fs.writeFileSync(
+	path.join(
+		"languages",
+		`available-languages.json`,
+	),
+	JSON.stringify(languages),
+);

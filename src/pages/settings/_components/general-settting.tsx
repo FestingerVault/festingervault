@@ -25,7 +25,7 @@ export default function SettingsForm() {
 							<SettingControl
 								label={__('Auto Activate')}
 								description={__(
-									'Automatically activate themes/plugin upon installation.'
+									'Automatically activate plugin upon installation.'
 								)}
 							>
 								<Switch

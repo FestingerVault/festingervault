@@ -430,6 +430,7 @@ export default function Component() {
 					{data.meta && (
 						<Paging
 							currentPage={Number(page)}
+							totalItems={data.meta?.total}
 							totalPages={data.meta?.last_page}
 							urlGenerator={(_page: number) =>
 								`/item/${item_type.slug}/${_page}?${dataCollection?.searchParams}`

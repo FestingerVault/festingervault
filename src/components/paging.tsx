@@ -8,16 +8,21 @@ import {
 	PaginationPrevious
 } from '@/components/ui/pagination';
 import generatePaginationArray from '@/lib/generatePaginationArray';
+import { _n } from '@/lib/i18n';
 import { useMemo } from '@wordpress/element';
+import { sprintf } from '@wordpress/i18n';
 type PagingProps = {
 	totalPages: number;
 	currentPage: number;
+	totalItems: number;
+
 	urlGenerator: (path: string | number) => string;
 	className?: string;
 };
 export default function Paging({
 	totalPages = 1,
 	currentPage = 1,
+	totalItems = 0,
 	urlGenerator,
 	className = ''
 }: PagingProps) {
@@ -25,11 +30,18 @@ export default function Paging({
 		return generatePaginationArray(currentPage, totalPages);
 	}, [currentPage, totalPages]);
 	if (totalPages < 2) {
-		return null;
+		return totalItems > 0 ? (
+			<div className="text-center text-muted-foreground">
+				{sprintf(
+					_n('%s item found', '%s items found', totalItems),
+					totalItems?.toLocaleString()
+				)}{' '}
+			</div>
+		) : null;
 	}
 
 	return (
-		<>
+		<div className="flex flex-col gap-2">
 			<Pagination className={className}>
 				<PaginationContent className="flex-wrap">
 					{currentPage > 1 && (
@@ -62,6 +74,12 @@ export default function Paging({
 					)}
 				</PaginationContent>
 			</Pagination>
-		</>
+			<div className="text-center text-muted-foreground">
+				{sprintf(
+					_n('%s item found', '%s items found', totalItems),
+					totalItems?.toLocaleString()
+				)}
+			</div>
+		</div>
 	);
 }

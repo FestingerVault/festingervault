@@ -5,7 +5,6 @@ import { Fragment, useEffect, type ElementType } from 'react';
 import { Link } from 'react-router-dom';
 import BulkAction from '../bulk-action';
 import DownloadManager from '../download-manager';
-import LanguageSelector from '../language-select';
 import ModeToggle from '../mode-toggle';
 import {
 	Breadcrumb,
@@ -147,7 +146,7 @@ function PageHeader({ title, description }: PageHeaderProps) {
 				<ModeToggle />
 				<BulkAction />
 				<DownloadManager />
-				<LanguageSelector />
+				{/* <LanguageSelector /> */}
 			</div>
 			<div className="flex flex-1 flex-col gap-1">
 				<h1 className="font-heading text-2xl font-bold">{title}</h1>

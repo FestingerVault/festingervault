@@ -178,6 +178,11 @@ class Admin
 				'moment',
 			],
 		]);
+		wp_localize_script(
+			Constants::SLUG . '-script',
+			'AVAILABLE_I18NS',
+			Helper::get_available_languages()
+		);
 		wp_set_script_translations(
 			Constants::SLUG . '-script',
 			Constants::TEXTDOMAIN,

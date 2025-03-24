@@ -5,6 +5,7 @@ import {
 	_nx as wp_nx,
 	_x as wp_x
 } from '@wordpress/i18n';
+import ISO6391 from 'iso-639-1';
 
 /**
  * Retrieve the translation of text.
@@ -64,4 +65,16 @@ export function _nx(
 	context: string
 ): string {
 	return wp_nx(single, plural, number, context, siteConfig.textdomain);
+}
+export function getLanguageCode(locale: string) {
+	return locale.split('_')[0]; // Extract the first part of the locale (e.g., 'en_US' -> 'en')
+}
+
+export function getLanguageName(locale: string) {
+	const languageCode = getLanguageCode(locale); // Extract the language code (e.g., 'en' from 'en_US')
+
+	// const nativeName = ISO6391.getNativeName(languageCode); // Get the native name (e.g., 'English' -> 'English', 'fr' -> 'Français')
+	//const englishName = ISO6391.getName(languageCode); // Get the English name (e.g., 'en' -> 'English', 'fr' -> 'French')
+
+	return ISO6391.getName(languageCode);
 }
